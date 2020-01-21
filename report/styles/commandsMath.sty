@@ -1,0 +1,8 @@
+\ProvidesPackage{styles/commandsMath}
+
+
+\preto{\section}{\setcounter{equation}{0}}
+
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\renewcommand{\j}{\ensuremath{\text{j}}}
+\newcommand{\qeda}{\tag*{$\blacksquare$}}

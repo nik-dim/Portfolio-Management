@@ -1,0 +1,50 @@
+\documentclass{NotebookToLatex}
+
+\usepackage[
+backend=bibtex,
+style=numeric,
+% citestyle=alpabetic,
+sorting=none 
+]{biblatex}
+
+\addbibresource{bibliography/references.bib}
+\title{FN 4329: INVESTMENTS AND PORTFOLIO MANAGEMENT}
+\author{\begin{tabular}{rl}
+    Dimitriadis Nikolaos & 231068\\
+    Apostolos Kyratzis & 230655
+\end{tabular}}
+\numberwithin{equation}{section}
+\renewcommand{\labelitemii}{$\circ$}
+\fancyhead[L]{PORTFOLIO MANAGEMENT}
+\fancyhead[R]{FN 4329 Project}
+
+
+\begin{document}
+    \sloppy
+    \maketitle
+    
+    % \maketitl\Large Investments Projectepage
+    \tableofcontents
+    \input{tasks/t1.tex}
+    \newpage
+    \input{tasks/t2.tex}
+    \newpage
+    \input{tasks/t3.tex}
+    \newpage
+    \input{tasks/t4.tex}
+    \newpage
+    \input{tasks/t5.tex}
+    \newpage
+    \input{tasks/t6.tex}
+    \newpage
+    \input{tasks/t7.tex}
+    \newpage
+    \input{tasks/t8.tex}
+    \newpage
+    \input{tasks/t9.tex}
+    \newpage
+    \input{tasks/t10.tex}
+    \newpage
+    \nocite{*}
+    \printbibliography
+\end{document}
