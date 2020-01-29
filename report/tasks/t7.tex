@@ -1,4 +1,35 @@
 \section{Question 7}  
 \textbf{Derive and graph the Capital Allocation Line. Graph the Efficient Frontier with your available investment instruments (assets) and superimpose your CAL. Discuss the various options you may have and finalize your optimal point.}
 
-By taking various random 
+By taking various random weight allocations we are able to create portfolios with different risks and returns. The optimality criterion lies in the Sharpe Ratio associated with each risky portfolio. The optimal risky portfolio is characterized by the highest Sharpe ratio.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{media/random_portfolios_and_EF.png}
+    \captionsetup{width=0.7\linewidth}
+    \caption{\( n=50,000 \) random portfolios are created and plotted in a common graph. The optimal risky portfolio and the Efficient Frontier also appear.}
+    \label{fig:random_portfolios_and_EF}
+\end{figure}
+
+The above graph is conducive with the theoretical one with respect to its shape. By creating the random portfolios with a large enough sample size \( (n=50,000)\), the range of annualized returns and volatilities is known. Yo find the Efficient Frontier an optimization problem must be solved. To be more specific, we seek to maximize the Sharpe Ratio given a fixed annualized portfolio return. By solving numerous such optimization problems, points on the Efficient Frontier are obtained and graphed. 
+
+The Capital Allocation Line or CAL is the line that connects the Optimal Portfolio with the risk-free portfolio. These two points suffice in deriving the equation of the CAL  \( \epsilon_{CAL} \):
+\begin{equation}
+    \label{eq:cal}
+    \left\{\begin{array}{c}
+        (0,r_f) \in \epsilon_{CAL}     \\
+        (\sigma_{OPT},r_{OPT}) \in \epsilon_{CAL}     
+    \end{array}    \right\} \implies \epsilon_{CAL}: y = \underbrace{\frac{r_{OPT}-r_f}{\sigma_{opt}}}_{\text{max Sharpe ratio}}\cdot x + r_f
+\end{equation}
+
+Thus, we are able to plot the CAL alongside the efficient frontier and the random portfolios.  
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{media/final_graph.png}
+    \captionsetup{width=0.7\linewidth}
+    \caption{The CAL passes through the risk-free and risky portfolio. The points of the line between these values are a linear combination of the two alternatives.}
+    \label{fig:final_graph}
+\end{figure}
+
+% \paragraph*{Observations}
