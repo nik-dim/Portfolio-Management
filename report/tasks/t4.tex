@@ -1,2 +1,123 @@
 \section{Question 4}  
 \textbf{Compute the descriptive statistics for each instrument. Explain each metric you computed from the perspective of the investor. Provide graphs as well. }
+
+Descriptive statistics are brief descriptive coefficients that summarize a given data set. In our case, this dataset is the returns of each instrument. These coefficients enable the reader to understand the features of the dataset and derive quantitative insights on its nature.
+
+\usetikzlibrary{arrows,shapes,positioning,shadows,trees}
+\begin{figure}[H]
+    \centering
+    \includestandalone{media/tikz/descriptive_statistics}
+    \caption{Taxonomy of descriptive statistics}
+    \label{fig:descriptive statistics}
+\end{figure}
+
+Let \( x_i , i\in [n]\) be the sample, i.e. the returns of an instrument.
+
+\subsection*{Measures of central tendency}
+Measures of central tendency describe the center position a distribution for a dataset. 
+
+\paragraph*{Mean} 
+The mean, denoted as \( \bar{x} \) is the sum of the sampled values divided by the number of items in the sample: 
+\begin{equation}
+    \label{eq:mean}
+    {\bar {x}}={\frac {1}{n}}\left(\sum _{i=1}^{n}{x_{i}}\right)={\frac {x_{1}+x_{2}+\cdots +x_{n}}{n}}
+\end{equation}
+From the investor's perspective, the mean describes the average performance of the instrument. If \( \bar{x}>0 \) then the instrument increases in value on average. 
+
+\paragraph*{Median}
+The median of data sample can be thought as the middle value of dataset, separating the higher from the lower half. It is a more robust measure than the mean, since it is not affected by outliers. The median can inform the investor on whether the returns are positive or negative on most time instances.
+
+\subsection*{Measures of Variability}
+Measures of variability describe how the data is distributed within the set. 
+
+
+\paragraph*{Standard Deviation}
+The Standard deviation expresses the variability of a population. It indicates the extent to which the values tend to be close to the mean. It is commonly used to measure confidence in statistics. For this reason, it is a measure of risk in economic terms. It is given by the following formula:
+
+\begin{equation}
+    \label{eq:standard Deviation}
+    \sigma ={\sqrt {{\frac {1}{N}}\sum _{i=1}^{N}(x_{i}-\bar{x} )^{2}}}    
+\end{equation}
+From the perspective of the investor, an instrument with high standard deviation carries more risk and should have higher returns to accomodate this variability of returns.
+
+
+% \paragraph*{Variance}
+% Variance is the
+
+
+\paragraph*{Minimum \& Maximum}
+Minimum and maximum describe the range of values. In economic terms, the maximum and minimum of returns reflect events that shape the price of the instrument. An example would be the recent economic crisis. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{media/s&p_crisis.png}
+    \captionsetup{width=.7\linewidth}
+    \caption{The minimum of the \texttt{S\&P500}  returns would occur on the day of the economic crisis for this period.}
+    \label{}
+\end{figure}
+
+
+\paragraph*{Kurtosis}
+
+Kurtosis measures whether the distribution is heavy- or light-tailed relative to a normal distribution. Data sets with high kurtosis tend to have heavy tails, or outliers, whilst data sets with low kurtosis lack outliers.
+The kurtosis is given by the following formula: 
+\begin{equation}
+    \label{eq:kurtosis}
+     \text{Kurt}(X)={\tilde {\mu }}_{4}=\mathbb{E}   \left[\left({\frac {X-\bar{x} }{\sigma }}\right)^{4}\right]  
+\end{equation}
+For investors, high kurtosis of the return distribution implies that the investor will experience occasional extreme returns.
+
+
+\paragraph*{Skewness}
+Skewness is a measure of asymmetry. To be more precise, this coefficient indicates if the tail of the distribution is on the left or the right.
+Let us consider a simple example:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{media/skewness.png}
+    \caption{Source: Wikipedia}
+    \label{}
+\end{figure}
+The skewness is given by the following formula:
+\begin{equation}
+    \label{eq:skewness}
+     {\tilde {\mu }}_{3}=\mathbb{E}   \left[\left({\frac {X-\bar{x} }{\sigma }}\right)^{3}\right]  
+\end{equation}
+
+Skewness is a vary important measure for investors. Standard Deviation is commonly associated with the estimation of an instrument's risk, but it has a major flaw in assming a normal distribution. Since few return distributions resemble a normal distribution, skewness is a better measure for predicting performance. 
+
+Most asset returns are skewed, either left or right. An investor can utilize this infomrmation to better predict future returns. A positively-skewed investment return means that there were frequent small losses and a few large gains. The opposite is true for negatively-skewed distributions.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{media/distplot.png}
+    \caption{Histogram of the returns }
+    \label{}
+\end{figure}
+
+
+% \begin{center}
+%     \begin{tabular}{|l|r|r|r|r|r|}%
+%         \toprule
+%         &QCOM&	TEAM&	TSLA&	BABA&	GSPC 
+%         \csvreader[head to column names]{media/df.csv}{}%
+%         {\\ \hline \csvcoli & \csvcolii & \csvcoliii & \csvcoliv & \csvcolv & \csvcolvi  }%
+%         \\\hline
+%     \end{tabular}
+% \end{center}
+\begin{center}
+\begin{tabular}{l|rrrrr}
+    \toprule
+    {} &       QCOM &       TEAM &      TSLA &      BABA &     \textasciicircum GSPC \\
+    \midrule
+    mean     &   0.000902 &   0.002253 &  0.001306 &  0.001065 &  0.000477 \\
+    median   &   0.000957 &   0.002923 &  0.000855 &  0.001053 &  0.000600 \\
+    std      &   0.019919 &   0.028439 &  0.029307 &  0.019771 &  0.008154 \\
+    var      &   0.000397 &   0.000809 &  0.000859 &  0.000391 &  0.000066 \\
+    min      &  -0.127205 &  -0.158750 & -0.139015 & -0.075999 & -0.040979 \\
+    max      &   0.232162 &   0.322857 &  0.176692 &  0.132919 &  0.049594 \\
+    kurtosis &  23.313450 &  22.733758 &  5.155017 &  2.897280 &  4.356755 \\
+    skewness &   1.332546 &   1.605961 &  0.317190 &  0.193228 & -0.571087 \\
+    \bottomrule
+    \end{tabular}
+\end{center}
+  

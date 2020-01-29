@@ -1,2 +1,18 @@
-\section{Question 1}  
+\section{Question 6}  
 \textbf{Calculate the return/risk of your risky portfolio. Explain each step in your analysis. You must use EXCEL’s mmult functions for this part of the analysis.}
+
+Let \( R_i \) be the returns data sample for the instrument \( i \) and \( \mathcal{ R } = (R_1, R_2,\cdots,R_n) \) be the collection of those random variables. 
+Let \( \vec{w} \) be the vector of weights that represents the allocation of the various instruments in our risky portfolio. Obvisouly, \( \|\vec{w}\|=1 \). Finally, let \( K \) be the associated covariance matrix.
+
+Then the return of the risky portfolio is a weighted average of the expected returns:
+
+\begin{equation}
+    \label{eq:return of risky portfolio}
+    R_{\text{risky portfolio}}= \vec{w}^\top\cdot \mathbb{E} (\mathcal{R}) 
+\end{equation}
+and the risk of the risky portfolio is measured by its standard deviation:
+\begin{align}
+    \label{eq:risk of risky portfolio}
+    \sigma_{\text{risky portfolio}}&= \sqrt{\vec{w}^\top K  \vec{w} }\\
+    &=\sqrt{\sum\limits_{i=1}^{n} w_i^2\sigma_i^2 +\sum\limits_{i=1}^{n} \sum\limits_{j=1}^{n} w_iw_j\sigma_i\sigma_j   }
+\end{align}

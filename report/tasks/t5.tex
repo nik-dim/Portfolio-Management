@@ -1,6 +1,75 @@
 \section{Question 5}  
 \textbf{Compute additional metrics for the assets such as the correlation and covariance matrices, for the entire and two subperiods (of your own choosing), if needed. Interpret your findings. Also, compute each fund’s alpha, beta, R-square. Interpret your findings from the perspective of the investor}
 
+\subsection{correlation and covariance}
+Let \( X \) and \( Y \) be two random variables. Then the covariance is a measure of the joint variability of these two random variables:
+
+\begin{equation}
+    \label{eq:covariance}
+    cov(X,Y) = \mathbb{E}[(X-\bar{x})(Y-\bar{y})] 
+\end{equation}
+In our case these random variables are the returns of the various instruments. The elememnt \( (i,j) \) of the covariance matrix is the correlation coefficient between intruments \( i \) and \( j \):
+
+\begin{center}
+    \begin{tabular}{l|rrrrr}
+        \toprule
+        {} &      QCOM &      TEAM &      TSLA &      BABA &     \textasciicircum GSPC \\
+        \midrule
+        QCOM  &  0.000397 &  0.000133 &  0.000116 &  0.000144 &  0.000081 \\
+        TEAM  &  0.000133 &  0.000809 &  0.000166 &  0.000170 &  0.000091 \\
+        TSLA  &  0.000116 &  0.000166 &  0.000859 &  0.000170 &  0.000087 \\
+        BABA  &  0.000144 &  0.000170 &  0.000170 &  0.000391 &  0.000094 \\
+        \textasciicircum GSPC &  0.000081 &  0.000091 &  0.000087 &  0.000094 &  0.000066 \\
+        \bottomrule
+        \end{tabular}
+\end{center}
+
+
+The correlation is the normalization of the covariance.
+\begin{equation}
+    \label{eq:correlation}
+    \rho_{X,Y}=\frac{cov(X,Y)}{\sigma_X \cdot\sigma_Y}
+\end{equation}
+The correlation ranges between \( -1 \) and \( 1 \) and it measures the linear dependence between two variables. 
+\begin{equation}
+    \rho_{X,Y}\begin{cases}
+        =-1, & \text{perfect decreasing (inverse) linear relationship}\\
+        \in (-1,1), & \text{indicating the degree of linear dependence between the variables}\\
+        =1, & \text{perfect (increasing) linear  relationship}
+     \end{cases}
+\end{equation}
+the correlation matrix is presented below:
+\begin{center}
+    \begin{tabular}{l|rrrrr}
+        \toprule
+        {} &      QCOM &      TEAM &      TSLA &      BABA &     \textasciicircum GSPC \\
+        \midrule
+        QCOM  &  1.000000 &  0.235646 &  0.199471 &  0.364991 &  0.499449 \\
+        TEAM  &  0.235646 &  1.000000 &  0.199616 &  0.301822 &  0.392658 \\
+        TSLA  &  0.199471 &  0.199616 &  1.000000 &  0.293921 &  0.365000 \\
+        BABA  &  0.364991 &  0.301822 &  0.293921 &  1.000000 &  0.580228 \\
+        \textasciicircum GSPC &  0.499449 &  0.392658 &  0.365000 &  0.580228 &  1.000000 \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+Both correlation and covariance matrices are symmetric.
+
+The correlation matrix is also shown in Figure \ref{fig:correlation matrix} and in Figure \ref{fig:pairplot} another visualitization of the effect of the various values of correlation coefficients is presented:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{media/correlation_matrix.png}
+    \caption{The correlation matrix for our instruments.}
+    \label{fig:correlation matrix}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{media/pairplot.png}
+    \captionsetup{width=.7\linewidth}
+    \caption{An illustration of the correlation matrix. When the correlation coefficient is negative the slope of the regression line is negative.}
+    \label{fig:pairplot}
+\end{figure}
+
 
 \subsection{beta}  
 The beta coefficient measures the systematic risk of an individual stock compared to the market risk, also called unsystematic risk. The beta formula is:

@@ -40,7 +40,7 @@
 \RequirePackage{datetime}
 \RequirePackage[LGR,T1]{fontenc}
 \RequirePackage{graphicx}
-\RequirePackage{xcolor} % Allow colors to be defined
+\RequirePackage[]{xcolor} % Allow colors to be defined
 \RequirePackage{amsmath} % Equations
 \RequirePackage{amssymb} % Equations
 \RequirePackage{fancyvrb} % verbatim replacement that allows latex, needed for colors.sty
@@ -63,7 +63,7 @@
 
 \RequirePackage{styles/myfancy}
 \RequirePackage{styles/environments}
-\RequirePackage{styles/colors}
+% \RequirePackage{styles/colors}
 \RequirePackage{styles/commandsFormat}
 \RequirePackage{styles/commandsMath}
 
@@ -100,14 +100,14 @@
 %	  PROJECT SPECIFIC PACKAGES
 %
 % ======================================================
-
+\usepackage{csvsimple}
 \usepackage{dirtytalk}
 \usepackage{hyperref}
 \usepackage{makecell}
 \usepackage{pgfmath}
 \usepackage{standalone}
 \usepackage{float}
-
+\usepackage{siunitx}
 \usepackage{multirow}
 \usepackage{array}
 \newcolumntype{L}{>{\centering\arraybackslash}m{3cm}}
