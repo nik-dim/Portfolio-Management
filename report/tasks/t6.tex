@@ -14,5 +14,21 @@ and the risk of the risky portfolio is measured by its standard deviation:
 \begin{align}
     \label{eq:risk of risky portfolio}
     \sigma_{\text{risky portfolio}}&= \sqrt{\vec{w}^\top K  \vec{w} }\\
-    &=\sqrt{\sum\limits_{i=1}^{n} w_i^2\sigma_i^2 +\sum\limits_{i=1}^{n} \sum\limits_{j=1}^{n} w_iw_j\sigma_i\sigma_j   }
+    &=\sqrt{\begin{bmatrix}    
+        w_1 & w_2 & \dots  & w_n
+    \end{bmatrix}
+    \begin{bmatrix}
+        \sigma_{1}^2       &   cov_{1,2}       & \dots     &   cov_{1,n}       \\
+        cov_{2,1}       &   \sigma_{2}^2       & \dots     &   cov_{2,n}       \\
+        \vdots          &  \vdots   &   \ddots   &   \vdots  \\   
+        cov_{n,1}       &   cov_{n,2}       & \dots     &   \sigma_{n}^2      \\
+    \end{bmatrix}    
+    \begin{bmatrix}
+        w_1     \\
+        w_2     \\
+        \vdots  \\
+        w_n     \\
+    \end{bmatrix}  
+     } \\
+    &=\sqrt{\sum\limits_{i=1}^{n} w_i^2\sigma_i^2 +\sum\limits_{i=1}^{n} \sum\limits_{j=1}^{n} w_iw_j cov_{i,j}   }
 \end{align}

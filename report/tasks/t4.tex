@@ -13,7 +13,7 @@ Descriptive statistics are brief descriptive coefficients that summarize a given
 
 Let \( x_i , i\in [n]\) be the sample, i.e. the returns of an instrument.
 
-\subsection*{Measures of central tendency}
+\subsection{Measures of central tendency}
 Measures of central tendency describe the center position a distribution for a dataset. 
 
 \paragraph*{Mean} 
@@ -27,7 +27,7 @@ From the investor's perspective, the mean describes the average performance of t
 \paragraph*{Median}
 The median of data sample can be thought as the middle value of dataset, separating the higher from the lower half. It is a more robust measure than the mean, since it is not affected by outliers. The median can inform the investor on whether the returns are positive or negative on most time instances.
 
-\subsection*{Measures of Variability}
+\subsection{Measures of Variability}
 Measures of variability describe how the data is distributed within the set. 
 
 
@@ -46,15 +46,24 @@ From the perspective of the investor, an instrument with high standard deviation
 
 
 \paragraph*{Minimum \& Maximum}
-Minimum and maximum describe the range of values. In economic terms, the maximum and minimum of returns reflect events that shape the price of the instrument. An example would be the recent economic crisis. 
+Minimum and maximum describe the range of values. In economic terms, the maximum and minimum of returns reflect events that shape the price of the instrument. An example would be the recent economic crisis and the announcement of Tesla's (\texttt{TSLA}) new vehicle: 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{media/s&p_crisis.png}
     \captionsetup{width=.7\linewidth}
     \caption{The minimum of the \texttt{S\&P500}  returns would occur on the day of the economic crisis for this period.}
-    \label{}
+    \label{fig:s&p500_crisis}
 \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{media/cybertruck.png}
+    \captionsetup{width=.7\linewidth}
+    \caption{Tesla's announcement of the Cybertruck resulted in a steep price increase.}
+    \label{fig:cybertruck}
+\end{figure}
+
 
 
 \paragraph*{Kurtosis}
@@ -87,13 +96,6 @@ Skewness is a vary important measure for investors. Standard Deviation is common
 
 Most asset returns are skewed, either left or right. An investor can utilize this infomrmation to better predict future returns. A positively-skewed investment return means that there were frequent small losses and a few large gains. The opposite is true for negatively-skewed distributions.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\linewidth]{media/distplot.png}
-    \caption{Histogram of the returns }
-    \label{}
-\end{figure}
-
 
 % \begin{center}
 %     \begin{tabular}{|l|r|r|r|r|r|}%
@@ -105,19 +107,31 @@ Most asset returns are skewed, either left or right. An investor can utilize thi
 %     \end{tabular}
 % \end{center}
 \begin{center}
-\begin{tabular}{l|rrrrr}
-    \toprule
-    {} &       QCOM &       TEAM &      TSLA &      BABA &     \textasciicircum GSPC \\
-    \midrule
-    mean     &   0.000902 &   0.002253 &  0.001306 &  0.001065 &  0.000477 \\
-    median   &   0.000957 &   0.002923 &  0.000855 &  0.001053 &  0.000600 \\
-    std      &   0.019919 &   0.028439 &  0.029307 &  0.019771 &  0.008154 \\
-    var      &   0.000397 &   0.000809 &  0.000859 &  0.000391 &  0.000066 \\
-    min      &  -0.127205 &  -0.158750 & -0.139015 & -0.075999 & -0.040979 \\
-    max      &   0.232162 &   0.322857 &  0.176692 &  0.132919 &  0.049594 \\
-    kurtosis &  23.313450 &  22.733758 &  5.155017 &  2.897280 &  4.356755 \\
-    skewness &   1.332546 &   1.605961 &  0.317190 &  0.193228 & -0.571087 \\
-    \bottomrule
-    \end{tabular}
+    \begin{adjustwidth}{\adjust}{}
+    \begin{tabular}{l|rrrrrrrrrr}
+        \toprule
+        {} &       QCOM &       TEAM &      TSLA &      BABA &       BLK &     PYACX &     VWEHX &      gold &  palladium &     \textasciicircum GSPC \\
+        \midrule
+        mean     &   0.000922 &   0.002285 &  0.001318 &  0.001083 &  0.000613 &  0.000258 &  0.000276 &  0.000356 &   0.001461 &  0.000486 \\
+        median   &   0.000942 &   0.002939 &  0.000859 &  0.001007 &  0.000665 &  0.000000 &  0.000000 &  0.000268 &   0.002145 &  0.000603 \\
+        std      &   0.019844 &   0.028471 &  0.029267 &  0.019670 &  0.014002 &  0.002369 &  0.002548 &  0.007604 &   0.016672 &  0.008134 \\
+        var      &   0.000394 &   0.000811 &  0.000857 &  0.000387 &  0.000196 &  0.000006 &  0.000006 &  0.000058 &   0.000278 &  0.000066 \\
+        min      &  -0.127205 &  -0.158750 & -0.139015 & -0.068171 & -0.071671 & -0.013158 & -0.013462 & -0.033435 &  -0.074046 & -0.040979 \\
+        max      &   0.232162 &   0.322857 &  0.176692 &  0.132919 &  0.053775 &  0.007739 &  0.011650 &  0.045232 &   0.074076 &  0.049594 \\
+        kurtosis &  23.533187 &  22.612034 &  5.175447 &  2.794831 &  2.871263 &  1.133641 &  4.391526 &  3.519966 &   1.689517 &  4.354180 \\
+        skewness &   1.369910 &   1.609357 &  0.316700 &  0.241728 & -0.451313 & -0.316738 & -0.339491 &  0.290666 &  -0.278651 & -0.559417 \\
+        \bottomrule
+        \end{tabular}
+    \end{adjustwidth}
 \end{center}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{media/distplot.png}
+    \caption{Histogram of the returns }
+    \label{}
+\end{figure}
+
+
   

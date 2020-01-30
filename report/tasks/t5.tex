@@ -8,20 +8,27 @@ Let \( X \) and \( Y \) be two random variables. Then the covariance is a measur
     \label{eq:covariance}
     cov(X,Y) = \mathbb{E}[(X-\bar{x})(Y-\bar{y})] 
 \end{equation}
-In our case these random variables are the returns of the various instruments. The elememnt \( (i,j) \) of the covariance matrix is the correlation coefficient between intruments \( i \) and \( j \):
+In our case these random variables are the returns of the various instruments. The elememnt \( (i,j) \) of the covariance matrix is the covariance between intruments \( i \) and \( j \):
 
 \begin{center}
-    \begin{tabular}{l|rrrrr}
+    \begin{adjustwidth}{\adjust}{}
+    \begin{tabular}{l|rrrrrrrrrr}
         \toprule
-        {} &      QCOM &      TEAM &      TSLA &      BABA &     \textasciicircum GSPC \\
+        {} &      QCOM &      TEAM &      TSLA &      BABA &       BLK &         PYACX &         VWEHX &      gold &  palladium &     \textasciicircum GSPC \\
         \midrule
-        QCOM  &  0.000397 &  0.000133 &  0.000116 &  0.000144 &  0.000081 \\
-        TEAM  &  0.000133 &  0.000809 &  0.000166 &  0.000170 &  0.000091 \\
-        TSLA  &  0.000116 &  0.000166 &  0.000859 &  0.000170 &  0.000087 \\
-        BABA  &  0.000144 &  0.000170 &  0.000170 &  0.000391 &  0.000094 \\
-        \textasciicircum GSPC &  0.000081 &  0.000091 &  0.000087 &  0.000094 &  0.000066 \\
+        QCOM      &  0.000394 &  0.000138 &  0.000116 &  0.000141 &  0.000121 & -6.761679e-06 &  1.027417e-05 & -0.000020 &   0.000042 &  0.000080 \\
+        TEAM      &  0.000138 &  0.000811 &  0.000167 &  0.000175 &  0.000111 & -4.098970e-06 &  1.331404e-05 & -0.000011 &   0.000038 &  0.000093 \\
+        TSLA      &  0.000116 &  0.000167 &  0.000857 &  0.000169 &  0.000106 & -5.648866e-06 &  1.360635e-05 & -0.000013 &   0.000057 &  0.000087 \\
+        BABA      &  0.000141 &  0.000175 &  0.000169 &  0.000387 &  0.000122 & -4.224175e-06 &  1.450409e-05 & -0.000012 &   0.000067 &  0.000093 \\
+        BLK       &  0.000121 &  0.000111 &  0.000106 &  0.000122 &  0.000196 & -8.851623e-06 &  1.374404e-05 & -0.000019 &   0.000050 &  0.000090 \\
+        PYACX     & -0.000007 & -0.000004 & -0.000006 & -0.000004 & -0.000009 &  5.610073e-06 &  7.027645e-07 &  0.000007 &  -0.000001 & -0.000004 \\
+        VWEHX     &  0.000010 &  0.000013 &  0.000014 &  0.000015 &  0.000014 &  7.027645e-07 &  6.491153e-06 & -0.000002 &   0.000007 &  0.000009 \\
+        gold      & -0.000020 & -0.000011 & -0.000013 & -0.000012 & -0.000019 &  6.612944e-06 & -1.918765e-06 &  0.000058 &   0.000029 & -0.000011 \\
+        palladium &  0.000042 &  0.000038 &  0.000057 &  0.000067 &  0.000050 & -1.173603e-06 &  7.206858e-06 &  0.000029 &   0.000278 &  0.000030 \\
+        \textasciicircum GSPC     &  0.000080 &  0.000093 &  0.000087 &  0.000093 &  0.000090 & -4.288050e-06 &  8.913414e-06 & -0.000011 &   0.000030 &  0.000066 \\
         \bottomrule
         \end{tabular}
+    \end{adjustwidth}
 \end{center}
 
 
@@ -40,17 +47,24 @@ The correlation ranges between \( -1 \) and \( 1 \) and it measures the linear d
 \end{equation}
 the correlation matrix is presented below:
 \begin{center}
-    \begin{tabular}{l|rrrrr}
+    \begin{adjustwidth}{\adjust}{}
+    \begin{tabular}{l|rrrrrrrrrr}
         \toprule
-        {} &      QCOM &      TEAM &      TSLA &      BABA &     \textasciicircum GSPC \\
+        {} &      QCOM &      TEAM &      TSLA &      BABA &       BLK &     PYACX &     VWEHX &      gold &  palladium &     \textasciicircum GSPC \\
         \midrule
-        QCOM  &  1.000000 &  0.235646 &  0.199471 &  0.364991 &  0.499449 \\
-        TEAM  &  0.235646 &  1.000000 &  0.199616 &  0.301822 &  0.392658 \\
-        TSLA  &  0.199471 &  0.199616 &  1.000000 &  0.293921 &  0.365000 \\
-        BABA  &  0.364991 &  0.301822 &  0.293921 &  1.000000 &  0.580228 \\
-        \textasciicircum GSPC &  0.499449 &  0.392658 &  0.365000 &  0.580228 &  1.000000 \\
+        QCOM      &  1.000000 &  0.243419 &  0.199395 &  0.361220 &  0.436478 & -0.143858 &  0.203212 & -0.135153 &   0.126725 &  0.497517 \\
+        TEAM      &  0.243419 &  1.000000 &  0.200639 &  0.312442 &  0.279119 & -0.060784 &  0.183548 & -0.050210 &   0.081051 &  0.400008 \\
+        TSLA      &  0.199395 &  0.200639 &  1.000000 &  0.294151 &  0.259546 & -0.081488 &  0.182472 & -0.058540 &   0.116378 &  0.365220 \\
+        BABA      &  0.361220 &  0.312442 &  0.294151 &  1.000000 &  0.441629 & -0.090667 &  0.289416 & -0.077828 &   0.204843 &  0.578349 \\
+        BLK       &  0.436478 &  0.279119 &  0.259546 &  0.441629 &  1.000000 & -0.266900 &  0.385268 & -0.180232 &   0.213814 &  0.787960 \\
+        PYACX     & -0.143858 & -0.060784 & -0.081488 & -0.090667 & -0.266900 &  1.000000 &  0.116457 &  0.367191 &  -0.029720 & -0.222572 \\
+        VWEHX     &  0.203212 &  0.183548 &  0.182472 &  0.289416 &  0.385268 &  0.116457 &  1.000000 & -0.099047 &   0.169668 &  0.430108 \\
+        gold      & -0.135153 & -0.050210 & -0.058540 & -0.077828 & -0.180232 &  0.367191 & -0.099047 &  1.000000 &   0.228830 & -0.179643 \\
+        palladium &  0.126725 &  0.081051 &  0.116378 &  0.204843 &  0.213814 & -0.029720 &  0.169668 &  0.228830 &   1.000000 &  0.218967 \\
+        \textasciicircum GSPC     &  0.497517 &  0.400008 &  0.365220 &  0.578349 &  0.787960 & -0.222572 &  0.430108 & -0.179643 &   0.218967 &  1.000000 \\
         \bottomrule
-    \end{tabular}
+        \end{tabular}
+    \end{adjustwidth}
 \end{center}
 Both correlation and covariance matrices are symmetric.
 
@@ -143,25 +157,29 @@ The calculation of the Sharpe Ratio using \texttt{Excel} uses "the trailing thre
 
 Using the historical data for each fund and the analysis presented above, we are able to calculate \( \alpha, \beta, R^2 \) and the Sparpe Ratio using \texttt{Excel}. The results are presented below:
 
-\begin{equation*}
-    \begin{tabular}{|c|c|c|}
-        \hline
-        & \texttt{VGPMX}  & \texttt{VHGEX}  \\\hline\hline
-        \text{alpha}        & -0.78 \%& -1.07  \%\\\hline
-        \text{beta}         & 0.76  \%& 1.13  \%\\\hline
-        \text{R-squared}    & 0.10  \%& 0.88  \%\\\hline
-        \text{Sharpe Ratio} & 0.06  \%& 0.52  \%\\\hline
-    \end{tabular}
-\end{equation*}
+\begin{center}
+    \begin{adjustwidth}{}{}
+        \begin{tabular}{lrrrrrrrrr}
+            \toprule
+            {} &      QCOM &      TEAM &      TSLA &      BABA &       BLK &     PYACX &     VWEHX &      gold &  palladium \\
+            \midrule
+            alpha     &  0.000332 &  0.001605 &  0.000680 &  0.000403 & -0.000046 &  0.000289 &  0.000211 &  0.000438 &   0.001243 \\
+            beta      &  1.213778 &  1.400108 &  1.314113 &  1.398591 &  1.356401 & -0.064811 &  0.134720 & -0.167928 &   0.448806 \\
+            r-squared &  0.247523 &  0.160006 &  0.133386 &  0.334487 &  0.620880 &  0.049538 &  0.184993 &  0.032272 &   0.047946 \\
+            \bottomrule
+            \end{tabular}
+    \end{adjustwidth}
+\end{center}
+
 \paragraph*{Methodology}
 Historical data of a 5-year time frame with monthly intervals were used for the above calculations. The index fund used for stock mutual funds is \href{https://finance.yahoo.com/quote/ACWI/}{ACWI}, as stated in MorningStar.
 
 \paragraph*{Risk-free Rate} To compute the Risk-Free rate, 1-Year Treasury Constant Maturity Rate was used (5 year average with monthly intervals).
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth]{media/stocks_regression.png}
-    \caption{Stocks Regression Plot}
-    % \caption{\title \text{ } returns}
-    % \label{fig:}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.8\linewidth]{media/stocks_regression.png}
+%     \caption{Stocks Regression Plot}
+%     % \caption{\title \text{ } returns}
+%     % \label{fig:}
+% \end{figure}

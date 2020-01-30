@@ -16,7 +16,7 @@
  \RequirePackage[greek,english]{babel}
 
 % \RequirePackage[inner=3cm,outer=1cm]{geometry}
-\RequirePackage[margin=3cm, bmargin=2cm]{geometry}
+\RequirePackage[margin=2cm, bmargin=2cm]{geometry}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[unicode]{hyperref}
 \hypersetup{
