@@ -22,7 +22,7 @@ sorting=none
 % \usepackage{colortbl}
 % \usepackage{mathtools}
 \usepackage{changepage}
-
+\usepackage{pdfpages}
 \newcommand\adjust{-1.5cm}
 
 \begin{document}
@@ -31,26 +31,28 @@ sorting=none
     
     % \maketitl\Large Investments Projectepage
     \tableofcontents
+    \newpage
     \input{tasks/t1.tex}
-    \newpage
+    % \newpage
     \input{tasks/t2.tex}
-    \newpage
+    % \newpage
     \input{tasks/t3.tex}
     \newpage
     \input{tasks/t4.tex}
     \newpage
     \input{tasks/t5.tex}
-    \newpage
+    % \newpage
     \input{tasks/t6.tex}
-    \newpage
+    % \newpage
     \input{tasks/t7.tex}
     \newpage
     \input{tasks/t8.tex}
-    \newpage
+    % \newpage
     \input{tasks/t9.tex}
-    \newpage
+    % \newpage
     \input{tasks/t10.tex}
-    \newpage
+    % \newpage
+    \input{tasks/appendix.tex}
     \nocite{*}
     \printbibliography
 \end{document}
