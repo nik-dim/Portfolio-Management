@@ -95,7 +95,7 @@ The beta coefficient measures the systematic risk of an individual stock compare
 where \( R_e \) is the return of the individual stock and \( R_m \) is the return of the overall market. In order to calculate \( \beta \), a regression model has to be fitted 
 on the data points from an individual stock's returns against those of the market. Then \( \beta \) is the slope of the aforementioned line.
 
-Even though the formula is straightforward, the data selection is not. The result depends on the time frame and frequency of historical data selected. Hence, many different \( \beta \) values can be found online. We use the \texttt{Yahoo Finance} model: 3 years of monthly data. To be more specific, let \( \mathcal{ D } =\left\{d_0,d_1,\dots,d_{36}\right\} \) be the closing prices of the individual stock. Then, \( \mathcal{ P } = \left\{p_1,\dots,p_{36}\right\} \)  is the set of the percent changes of said closing prices where \( p_i = \frac{d_i-d_{i-1}}{d_{i-1}}\times 100\% \). Note that \( \mathcal{ P } = R_e \) (see \eqref{eq:beta}). By the same token, \( R_m \) is calculated using the historical closing prices of the market index (\texttt{GSPC}). Using these data points and equation \eqref{eq:beta}, \( \beta \) is calculated.
+Even though the formula is straightforward, the data selection is not. The result depends on the time frame and frequency of historical data selected. Hence, many different \( \beta \) values can be found online. We use 5 years of daily data. To be more specific, let \( \mathcal{ D } =\left\{d_0,d_1,\dots,d_{36}\right\} \) be the closing prices of the individual stock. Then, \( \mathcal{ P } = \left\{p_1,\dots,p_{36}\right\} \)  is the set of the percent changes of said closing prices where \( p_i = \frac{d_i-d_{i-1}}{d_{i-1}}\times 100\% \). Note that \( \mathcal{ P } = R_e \) (see \eqref{eq:beta}). By the same token, \( R_m \) is calculated using the historical closing prices of the market index (\texttt{GSPC}). Using these data points and equation \eqref{eq:beta}, \( \beta \) is calculated.
 
 
 \subsection{alpha} 
@@ -153,13 +153,13 @@ where
     \item \( R_f=\text{risk-free rate} \)
     \item \( \sigma_p=\text{standard variation of the portfolio's excess return} \)
 \end{itemize}
-The calculation of the Sharpe Ratio using \texttt{Excel} uses "the trailing three-year period by dividing a fund's annualized excess returns over the risk-free rate by its annualized standard deviation"\footnote{\href{https://www.morningstar.com/InvGlossary/sharpe_ratio.aspx?fbclid=IwAR3SJ8lYFFHd8nhWYhOoMcq8v0hOhMuvDXnA9G58gbYwXixBjmb7pa-c5vs}{link}}.
+To calculate the Sharpe Ratio we use "the trailing \textit{five}-year period by dividing a fund's annualized excess returns over the risk-free rate by its annualized standard deviation"\footnote{\href{https://www.morningstar.com/InvGlossary/sharpe_ratio.aspx?fbclid=IwAR3SJ8lYFFHd8nhWYhOoMcq8v0hOhMuvDXnA9G58gbYwXixBjmb7pa-c5vs}{link}}.
 
-Using the historical data for each fund and the analysis presented above, we are able to calculate \( \alpha, \beta, R^2 \) and the Sparpe Ratio using \texttt{Excel}. The results are presented below:
+Using the historical data for each fund and the analysis presented above, we are able to calculate \( \alpha, \beta, R^2 \) and the Sparpe Ratio using \texttt{Python}. The results are presented below:
 
 \begin{center}
     \begin{adjustwidth}{}{}
-        \begin{tabular}{lrrrrrrrrr}
+        \begin{tabular}{l|rrrrrrrrr}
             \toprule
             {} &      QCOM &      TEAM &      TSLA &      BABA &       BLK &     PYACX &     VWEHX &      gold &  palladium \\
             \midrule
@@ -172,7 +172,7 @@ Using the historical data for each fund and the analysis presented above, we are
 \end{center}
 
 \paragraph*{Methodology}
-Historical data of a 5-year time frame with monthly intervals were used for the above calculations. The index fund used for stock mutual funds is \href{https://finance.yahoo.com/quote/ACWI/}{ACWI}, as stated in MorningStar.
+Historical data of a 5-year time frame with daily intervals were used for the above calculations.
 
 \paragraph*{Risk-free Rate} To compute the Risk-Free rate, 1-Year Treasury Constant Maturity Rate was used (5 year average with monthly intervals).
 

@@ -2,7 +2,7 @@
 \textbf{Calculate the return/risk of your risky portfolio. Explain each step in your analysis. You must use EXCEL’s mmult functions for this part of the analysis.}
 
 Let \( R_i \) be the returns data sample for the instrument \( i \) and \( \mathcal{ R } = (R_1, R_2,\cdots,R_n) \) be the collection of those random variables. 
-Let \( \vec{w} \) be the vector of weights that represents the allocation of the various instruments in our risky portfolio. Obvisouly, \( \|\vec{w}\|=1 \). Finally, let \( K \) be the associated covariance matrix.
+Let \( \vec{w} \) be the vector of weights that represents the allocation of the various instruments in our risky portfolio. Obvisouly, \( \|\vec{w}\|_1=1 \). Finally, let \( K \) be the associated covariance matrix.
 
 Then the return of the risky portfolio is a weighted average of the expected returns:
 
@@ -18,10 +18,10 @@ and the risk of the risky portfolio is measured by its standard deviation:
         w_1 & w_2 & \dots  & w_n
     \end{bmatrix}
     \begin{bmatrix}
-        \sigma_{1}^2       &   cov_{1,2}       & \dots     &   cov_{1,n}       \\
-        cov_{2,1}       &   \sigma_{2}^2       & \dots     &   cov_{2,n}       \\
+        \sigma_{1}^2       &   \text{cov}_{1,2}       & \dots     &   \text{cov}_{1,n}       \\
+        \text{cov}_{2,1}       &   \sigma_{2}^2       & \dots     &   \text{cov}_{2,n}       \\
         \vdots          &  \vdots   &   \ddots   &   \vdots  \\   
-        cov_{n,1}       &   cov_{n,2}       & \dots     &   \sigma_{n}^2      \\
+        \text{cov}_{n,1}       &   \text{cov}_{n,2}       & \dots     &   \sigma_{n}^2      \\
     \end{bmatrix}    
     \begin{bmatrix}
         w_1     \\
@@ -30,5 +30,5 @@ and the risk of the risky portfolio is measured by its standard deviation:
         w_n     \\
     \end{bmatrix}  
      } \\
-    &=\sqrt{\sum\limits_{i=1}^{n} w_i^2\sigma_i^2 +\sum\limits_{i=1}^{n} \sum\limits_{j=1}^{n} w_iw_j cov_{i,j}   }
+    &=\sqrt{\sum\limits_{i=1}^{n} w_i^2\sigma_i^2 +\sum\limits_{i=1}^{n} \sum\limits_{j=1}^{n} w_iw_j \text{cov}_{i,j}   }
 \end{align}
