@@ -87,15 +87,23 @@
     \frametitle{alpha}
 
     % By finding \( \beta \) we can proceed to calculate \( \alpha \). To be more precise \( \alpha \) denotes the excess return. The Capital Asset Pricing Model (CAPM) is given by:
-    \begin{equation}
-        \label{eq:CAPM}
-        \mathbb{E}  (R_{i})=R_{f}+\beta _{{i}}(\mathbb{E}  (R_{m})-R_{f}) 
-    \end{equation}
+    % \begin{equation*}
+    %     \label{eq:CAPM}
+    %     \mathbb{E}  (R_{i})=R_{f}+\beta _{{i}}(\mathbb{E}  (R_{m})-R_{f}) 
+    % \end{equation*}
     % where \( \mathbb{E}  (R_{i}) \) is the expected return of the indvidual asset, \( R_f \) is the risk-free rate. Then, \( \alpha \) is calculated by substracting the expected returns from the actual mean portfolio returns \( \bar{R} \):
-    \begin{equation}
-        \label{eq:alpha}
-        \alpha = \bar{R} - \mathbb{E} (R) 
-    \end{equation}
+    % \begin{equation*}
+    %     \label{eq:alpha}
+    %     \alpha = \bar{R} - \mathbb{E} (R) 
+    % \end{equation*}
+    \begin{block}{Definition}
+        Alpha is the difference betwwen the realised returns and the expected returns:
+        \begin{align*}
+            \alpha &= \bar{R} - \mathbb{E} (R) 
+            \\\stackrel{\text{CAPM}}{\implies}\alpha&=\bar{R} - \left\{R_{f}+\beta(\mathbb{E}  (R_{m})-R_{f})\right\}
+        \end{align*} 
+    \end{block}
+    
 
 \end{frame}
 
@@ -109,10 +117,14 @@
 
 \begin{frame}
     \frametitle{\( R \)-squared}
-    \begin{equation*}
-        \label{eq:r-squared}
-        R^2=1-\frac{\text{Explained Variation}}{\text{Total Variation}}
-    \end{equation*}
+    % \begin{block}{Definition}
+        \begin{equation*}
+            \label{eq:r-squared}
+            R^2=1-\frac{\text{Explained Variation}}{\text{Total Variation}}
+        \end{equation*}
+        % Denotes the percentage of a fund's movements that can be explained away by the historical changes of the benchmark index. 
+    % \end{block}
+    
     \begin{figure}[]
         \centering
         \begin{subfigure}[t]{0.5\textwidth}
@@ -125,8 +137,8 @@
         \begin{subfigure}[t]{0.5\textwidth}
             \centering
             \includegraphics[width=\textwidth]{../report/media/mean_line.png}
-            \label{fig:q2}
             \caption{Total Variation}
+            \label{fig:q2}
         \end{subfigure}
         % \caption{\( R \)-squared calculation}
     \end{figure}
@@ -138,10 +150,10 @@
 \subsection{Sharpe ratio} 
 \begin{frame}
     \frametitle{Sharpe Ratio}
-    \begin{equation}
+    \begin{equation*}
         \label{eq:sharpe ration}
         \text{Sharpe Ratio} = \frac{R_p-R_f}{\sigma_p}    
-    \end{equation} 
+    \end{equation*} 
     where
     \begin{itemize}
         \item \( R_p=\text{return of mutual fund} \)
