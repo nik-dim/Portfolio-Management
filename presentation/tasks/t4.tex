@@ -1,0 +1,154 @@
+\section{Question 4}  
+% \textbf{Compute the descriptive statistics for each instrument. Explain each metric you computed from the perspective of the investor. Provide graphs as well. }
+
+\begin{frame}
+	\frametitle{Descriptive statistics Taxonomy}
+	\begin{figure}[H]
+        \centering
+        \includestandalone[width=0.7\linewidth,mode=image]{../report/media/tikz/descriptive_statistics}
+        % \caption{Taxonomy of descriptive statistics}
+        \label{fig:descriptive statistics}
+    \end{figure}
+\end{frame}
+
+
+% Descriptive statistics are brief descriptive coefficients that summarize a given data set. In our case, this dataset is the returns of each instrument. These coefficients enable the reader to understand the features of the dataset and derive quantitative insights on its nature.
+
+% \usetikzlibrary{arrows,shapes,positioning,shadows,trees}
+
+
+% Let \( x_i , i\in [n]\) be the sample, i.e. the returns of an instrument.
+
+\subsection{Measures of central tendency}
+\begin{frame}
+    \frametitle{Measures of central tendency}
+    \begin{block}{Mean}
+        \begin{equation*}
+            \label{eq:mean}
+            {\bar {x}}={\frac {1}{n}}\left(\sum _{i=1}^{n}{x_{i}}\right)={\frac {x_{1}+x_{2}+\cdots +x_{n}}{n}}
+        \end{equation*}
+    \end{block}
+	\begin{block}{Median}
+        The median of data sample can be thought as the middle value of dataset, separating the higher from the lower half. It is a more robust measure than the mean, since it is not affected by outliers. The median can inform the investor on whether the returns are positive or negative on most time instances.
+    \end{block}
+\end{frame}
+
+
+\subsection{Measures of Variability}
+% Measures of variability describe how the data is distributed within the set. 
+
+\begin{frame}
+    \frametitle{Measures of Variability}
+    \framesubtitle{Standard Deviation}
+    % The Standard deviation expresses the variability of a population. It indicates the extent to which the values tend to be close to the mean. It is commonly used to measure confidence in statistics. For this reason, it is a measure of risk in economic terms. It is given by the following formula:
+
+    \begin{equation*}
+        \label{eq:standard Deviation}
+        \sigma ={\sqrt {{\frac {1}{N}}\sum _{i=1}^{N}(x_{i}-\bar{x} )^{2}}}    
+    \end{equation*}
+    \begin{itemize}
+        \item how "spread out" are the data around the mean
+        \item measure confidence in statistics \( \implies \) risk in finance
+    \end{itemize}
+    % From the perspective of the investor, an instrument with high standard deviation carries more risk and should have higher returns to accomodate this variability of returns.
+\end{frame}
+
+
+
+% \paragraph*{Minimum \& Maximum}
+% Minimum and maximum describe the range of values. In economic terms, the maximum and minimum of returns reflect events that shape the price of the instrument. An example would be the recent economic crisis and the announcement of Tesla's (\texttt{TSLA}) new vehicle: 
+
+\begin{frame}
+    \frametitle{Measures of Variability}
+    \framesubtitle{Minimum \& Maximum}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{../report/media/s&p_crisis.png}
+        \captionsetup{width=.7\linewidth}
+        \caption{The minimum of the \texttt{S\&P500}  returns would occur on the day of the economic crisis for this period.}
+        \label{fig:s&p500_crisis}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Measures of Variability}
+    \framesubtitle{Minimum \& Maximum}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{../report/media/cybertruck.png}
+        \captionsetup{width=.7\linewidth}
+        \caption{Tesla's announcement of the Cybertruck resulted in a steep price increase.}
+        \label{fig:cybertruck}
+    \end{figure}
+\end{frame}
+
+
+
+% \paragraph*{Kurtosis}
+\begin{frame}
+    \frametitle{Measures of Variability}
+    \framesubtitle{Kurtosis}
+    % Kurtosis measures whether the distribution is heavy- or light-tailed relative to a normal distribution. Data sets with high kurtosis tend to have heavy tails, or outliers, whilst data sets with low kurtosis lack outliers.
+    % The kurtosis is given by the following formula: 
+    \begin{block}{Definition}
+        \begin{equation*}
+            \label{eq:kurtosis}
+             \text{Kurt}(X)={\tilde {\mu }}_{4}=\mathbb{E}   \left[\left({\frac {X-\bar{x} }{\sigma }}\right)^{4}\right]  
+        \end{equation*}
+        Kurtosis measures whether the distribution is heavy- or light-tailed relative to a normal distribution
+    \end{block}
+    
+    
+    \begin{itemize}
+        \item high kurtosis \( \rightarrow \) heavy tails \textbf{(outliers)} 
+        \item low kurtosis \( \rightarrow \)  no outliers
+    \end{itemize}
+    % For investors, high kurtosis of the return distribution implies that the investor will experience occasional extreme returns.
+\end{frame}
+
+
+
+% \paragraph*{Skewness}
+% Skewness is a measure of asymmetry. To be more precise, this coefficient indicates if the tail of the distribution is on the left or the right.
+% Let us consider a simple example:
+
+\begin{frame}
+    \frametitle{Measures of Variability}
+    \framesubtitle{Skewness}
+    % Skewness is a vary important measure for investors. Standard Deviation is commonly associated with the estimation of an instrument's risk, but it has a major flaw in assming a normal distribution. Since few return distributions resemble a normal distribution, skewness is a better measure for predicting performance.
+    \begin{block}{Definition}
+        \begin{equation*}
+            \label{eq:skewness}
+             {\tilde {\mu }}_{3}=\mathbb{E}   \left[\left({\frac {X-\bar{x} }{\sigma }}\right)^{3}\right]  
+        \end{equation*}
+        Skewness is a measure of asymmetry that indicates if the tail of the distribution is on the left or the right.
+    \end{block}
+    
+    
+	\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{../report/media/skewness.png}
+        % \caption{Source: Wikipedia}
+        \label{}
+    \end{figure}
+     
+
+    % Most asset returns are skewed, either left or right. An investor can utilize this infomrmation to better predict future returns. A positively-skewed investment return means that there were frequent small losses and a few large gains. The opposite is true for negatively-skewed distributions.
+
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{}
+	\begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{../report/media/Dist_Plots.png}
+        \caption{Histogram of the returns. A bell curve approximation is fitted. Note that the x-axis is common among the histograms. This allows us to grasp the "spread" or variability of each asset. It is easy to see that bonds are less risky than commodities and especially stocks.  }
+        \label{}
+    \end{figure}
+\end{frame}
+
+

@@ -1,0 +1,153 @@
+\section{Question 5}  
+% \textbf{Compute additional metrics for the assets such as the correlation and covariance matrices, for the entire and two subperiods (of your own choosing), if needed. Interpret your findings. Also, compute each fund’s alpha, beta, R-square. Interpret your findings from the perspective of the investor}
+
+\subsection{correlation and covariance}
+\begin{frame}
+    \frametitle{Correlation and covariance}
+
+    \begin{block}{Covariance Definition}
+        Let \( X \) and \( Y \) be two random variables. Then the covariance is a measure of the joint variability of these two random variables:
+
+        \begin{equation*}
+            \label{eq:covariance}
+            cov(X,Y) = \mathbb{E}[(X-\bar{x})(Y-\bar{y})] 
+        \end{equation*}
+    \end{block}
+    
+    \begin{block}{Correlation Definition}
+        The correlation is the normalization of the covariance.
+        \begin{equation*}
+            \label{eq:correlation}
+            \rho_{X,Y}=\frac{cov(X,Y)}{\sigma_X \cdot\sigma_Y}
+        \end{equation*}
+    \end{block}
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{A closer look at correlation}
+
+    % The correlation ranges between \( -1 \) and \( 1 \) and it measures the linear dependence between two variables. 
+    \begin{equation*}
+        \rho_{X,Y}\begin{cases}
+            =-1, & \text{perfect decreasing (inverse) linear relationship}\\
+            \in (-1,1), & \text{indicating the degree of linear dependence}\\
+            =1, & \text{perfect (increasing) linear  relationship}
+        \end{cases}
+    \end{equation*}
+    \begin{alertblock}{todo}
+        add regression plots to show the difference
+    \end{alertblock}
+    
+\end{frame}
+
+% the correlation matrix is presented below:
+\begin{frame}
+    \frametitle{Correlation Matrix}
+	\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{../report/media/Correlation_Matrix.png}
+        % \caption{The correlation matrix for our instruments.}
+        \label{fig:correlation matrix}
+    \end{figure}
+\end{frame}
+
+% The correlation matrix is also shown in Figure \ref{fig:correlation matrix} and in Figure \ref{fig:pairplot} another visualitization of the effect of the various values of correlation coefficients is presented:
+
+
+
+
+\subsection{beta}  
+\begin{frame}
+    \frametitle{Beta}
+    \begin{block}{Definition}
+        The beta coefficient measures the systematic risk of an individual stock compared to the market risk, also called unsystematic risk. 
+        % The beta formula is:
+
+        \begin{equation*}
+            \label{eq:beta}
+            \beta = \frac{\text{cov}(R_e,R_m)}{\text{var}(R_m)}
+        \end{equation*}
+    \end{block}
+    
+    
+    % where \( R_e \) is the return of the individual stock and \( R_m \) is the return of the overall market. In order to calculate \( \beta \), a regression model has to be fitted 
+    % on the data points from an individual stock's returns against those of the market. Then \( \beta \) is the slope of the aforementioned line.
+
+    % Even though the formula is straightforward, the data selection is not. The result depends on the time frame and frequency of historical data selected. Hence, many different \( \beta \) values can be found online. We use 5 years of daily data. To be more specific, let \( \mathcal{ D } =\left\{d_0,d_1,\dots,d_{36}\right\} \) be the closing prices of the individual stock. Then, \( \mathcal{ P } = \left\{p_1,\dots,p_{36}\right\} \)  is the set of the percent changes of said closing prices where \( p_i = \frac{d_i-d_{i-1}}{d_{i-1}}\times 100\% \). Note that \( \mathcal{ P } = R_e \) (see \eqref{eq:beta}). By the same token, \( R_m \) is calculated using the historical closing prices of the market index (\texttt{GSPC}). Using these data points and equation \eqref{eq:beta}, \( \beta \) is calculated.
+
+
+    
+
+\end{frame}
+
+\subsection{alpha} 
+\begin{frame}
+    \frametitle{alpha}
+
+    % By finding \( \beta \) we can proceed to calculate \( \alpha \). To be more precise \( \alpha \) denotes the excess return. The Capital Asset Pricing Model (CAPM) is given by:
+    \begin{equation}
+        \label{eq:CAPM}
+        \mathbb{E}  (R_{i})=R_{f}+\beta _{{i}}(\mathbb{E}  (R_{m})-R_{f}) 
+    \end{equation}
+    % where \( \mathbb{E}  (R_{i}) \) is the expected return of the indvidual asset, \( R_f \) is the risk-free rate. Then, \( \alpha \) is calculated by substracting the expected returns from the actual mean portfolio returns \( \bar{R} \):
+    \begin{equation}
+        \label{eq:alpha}
+        \alpha = \bar{R} - \mathbb{E} (R) 
+    \end{equation}
+
+\end{frame}
+
+
+
+\subsection{R-squared} 
+% \( R \)-squared or coefficient of variation is calculated using the following formula:
+
+
+% \( R^2 \) is a statistical measure that indicates the proportion of the variation of dependent variable that can be explained using the independent variables of a simple regression model. An illustrative explanation is adduced using the following figures. In \ref{fig:rsquared_explanation_regression} a simple regression model is fitted using the data provided. The explained variation is the sum of the squared distances from the regression line divided by the number of points. Said distances are denoted with a blue color in the figures below. The total variation is calculated by the same token but with a crucial difference: the line is horizontal and denotes the mean of the data.
+
+\begin{frame}
+    \frametitle{\( R \)-squared}
+    \begin{equation*}
+        \label{eq:r-squared}
+        R^2=1-\frac{\text{Explained Variation}}{\text{Total Variation}}
+    \end{equation*}
+    \begin{figure}[]
+        \centering
+        \begin{subfigure}[t]{0.5\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{../report/media/regression_line.png}
+            \caption{Explained Variation}
+            \label{fig:rsquared_explanation_regression}
+        \end{subfigure}%
+        ~ 
+        \begin{subfigure}[t]{0.5\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{../report/media/mean_line.png}
+            \label{fig:q2}
+            \caption{Total Variation}
+        \end{subfigure}
+        % \caption{\( R \)-squared calculation}
+    \end{figure}
+\end{frame}
+
+
+% In economics, the \( R^2 \) measure denotes the percentage of a fund's movements that can be explained away by the historical changes of the benchmark index.
+
+\subsection{Sharpe ratio} 
+\begin{frame}
+    \frametitle{Sharpe Ratio}
+    \begin{equation}
+        \label{eq:sharpe ration}
+        \text{Sharpe Ratio} = \frac{R_p-R_f}{\sigma_p}    
+    \end{equation} 
+    where
+    \begin{itemize}
+        \item \( R_p=\text{return of mutual fund} \)
+        \item \( R_f=\text{risk-free rate} \)
+        \item \( \sigma_p=\text{standard variation of the portfolio's excess return} \)
+    \end{itemize}
+    
+
+\end{frame}
