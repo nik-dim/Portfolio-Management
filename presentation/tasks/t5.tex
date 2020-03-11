@@ -3,7 +3,7 @@
 
 \subsection{correlation and covariance}
 \begin{frame}
-    \frametitle{Correlation and covariance}
+    \frametitle{Covariance}
 
     \begin{block}{Covariance Definition}
         Let \( X \) and \( Y \) be two random variables. Then the covariance is a measure of the joint variability of these two random variables:
@@ -13,21 +13,24 @@
             cov(X,Y) = \mathbb{E}[(X-\bar{x})(Y-\bar{y})] 
         \end{equation*}
     \end{block}
-    
-    \begin{block}{Correlation Definition}
+    \pause
+    \begin{itemize}
+        \item not so helpful! \pause \( \rightarrow \) correlation
+    \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Correlation}
+
+    \begin{block}{Definition}
         The correlation is the normalization of the covariance.
         \begin{equation*}
             \label{eq:correlation}
             \rho_{X,Y}=\frac{cov(X,Y)}{\sigma_X \cdot\sigma_Y}
         \end{equation*}
     \end{block}
-\end{frame}
-
-
-
-\begin{frame}
-    \frametitle{A closer look at correlation}
-
     % The correlation ranges between \( -1 \) and \( 1 \) and it measures the linear dependence between two variables. 
     \begin{equation*}
         \rho_{X,Y}\begin{cases}
@@ -35,11 +38,16 @@
             \in (-1,1), & \text{indicating the degree of linear dependence}\\
             =1, & \text{perfect (increasing) linear  relationship}
         \end{cases}
-    \end{equation*}
+    \end{equation*}   
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{A closer look at correlation}
+
     \begin{alertblock}{todo}
         add regression plots to show the difference
-    \end{alertblock}
-    
+    \end{alertblock}    
 \end{frame}
 
 % the correlation matrix is presented below:
@@ -97,7 +105,7 @@
     %     \alpha = \bar{R} - \mathbb{E} (R) 
     % \end{equation*}
     \begin{block}{Definition}
-        Alpha is the difference betwwen the realised returns and the expected returns:
+        Alpha is the difference between the realised returns and the expected returns:
         \begin{align*}
             \alpha &= \bar{R} - \mathbb{E} (R) 
             \\\stackrel{\text{CAPM}}{\implies}\alpha&=\bar{R} - \left\{R_{f}+\beta(\mathbb{E}  (R_{m})-R_{f})\right\}

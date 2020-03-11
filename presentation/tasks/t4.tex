@@ -22,15 +22,26 @@
 \subsection{Measures of central tendency}
 \begin{frame}
     \frametitle{Measures of central tendency}
+    \framesubtitle{Mean}
     \begin{block}{Mean}
         \begin{equation*}
             \label{eq:mean}
             {\bar {x}}={\frac {1}{n}}\left(\sum _{i=1}^{n}{x_{i}}\right)={\frac {x_{1}+x_{2}+\cdots +x_{n}}{n}}
         \end{equation*}
     \end{block}
-	\begin{block}{Median}
-        The median of data sample can be thought as the middle value of dataset, separating the higher from the lower half. It is a more robust measure than the mean, since it is not affected by outliers. The median can inform the investor on whether the returns are positive or negative on most time instances.
-    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Measures of central tendency}
+    \framesubtitle{Median}
+    \begin{itemize}
+        \item i.e. the middle value \pause
+        \item \textcolor{blue}{Why?} \pause robust w.r.t. outliers \pause
+        \item indicates whether returns are positive or negative on most time instances.
+    \end{itemize}
+	% \begin{block}{Median}
+    %     The median of data sample can be thought as the middle value of dataset, separating the higher from the lower half. It is a more robust measure than the mean, since it is not affected by outliers. The median can inform the investor on whether the returns are positive or negative on most time instances.
+    % \end{block}
 \end{frame}
 
 
@@ -54,6 +65,16 @@
 \end{frame}
 
 
+\begin{frame}
+    \frametitle{}
+	\begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{../report/media/Dist_Plots.png}
+        \caption{Histogram of the returns. A bell curve approximation is fitted. Note that the x-axis is common among the histograms. This allows us to grasp the "spread" or variability of each asset. It is easy to see that bonds are less risky than commodities and especially stocks.  }
+        % \label{}
+    \end{figure}
+\end{frame}
+
 
 % \paragraph*{Minimum \& Maximum}
 % Minimum and maximum describe the range of values. In economic terms, the maximum and minimum of returns reflect events that shape the price of the instrument. An example would be the recent economic crisis and the announcement of Tesla's (\texttt{TSLA}) new vehicle: 
@@ -65,7 +86,7 @@
     \begin{figure}[H]
         \centering
         \includegraphics[width=\linewidth]{../report/media/s&p_crisis.png}
-        \captionsetup{width=.7\linewidth}
+        \captionsetup{width=.8\linewidth}
         \caption{The minimum of the \texttt{S\&P500}  returns would occur on the day of the economic crisis for this period.}
         \label{fig:s&p500_crisis}
     \end{figure}
@@ -84,6 +105,39 @@
     \end{figure}
 \end{frame}
 
+
+
+
+
+
+% \paragraph*{Skewness}
+% Skewness is a measure of asymmetry. To be more precise, this coefficient indicates if the tail of the distribution is on the left or the right.
+% Let us consider a simple example:
+
+\begin{frame}
+    \frametitle{Measures of Variability}
+    \framesubtitle{Skewness}
+    % Skewness is a vary important measure for investors. Standard Deviation is commonly associated with the estimation of an instrument's risk, but it has a major flaw in assming a normal distribution. Since few return distributions resemble a normal distribution, skewness is a better measure for predicting performance.
+    \begin{block}{Definition}
+        \begin{equation*}
+            \label{eq:skewness}
+             {\tilde {\mu }}_{3}=\mathbb{E}   \left[\left({\frac {X-\bar{x} }{\sigma }}\right)^{3}\right]  
+        \end{equation*}
+        Skewness is a measure of asymmetry that indicates if the tail of the distribution is on the left or the right.
+    \end{block}
+    
+    
+	\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\linewidth]{../report/media/skewness.png}
+        % \caption{Source: Wikipedia}
+        % \label{}
+    \end{figure}
+     
+
+    % Most asset returns are skewed, either left or right. An investor can utilize this infomrmation to better predict future returns. A positively-skewed investment return means that there were frequent small losses and a few large gains. The opposite is true for negatively-skewed distributions.
+
+\end{frame}
 
 
 % \paragraph*{Kurtosis}
@@ -109,46 +163,18 @@
 \end{frame}
 
 
-
-% \paragraph*{Skewness}
-% Skewness is a measure of asymmetry. To be more precise, this coefficient indicates if the tail of the distribution is on the left or the right.
-% Let us consider a simple example:
-
 \begin{frame}
     \frametitle{Measures of Variability}
-    \framesubtitle{Skewness}
-    % Skewness is a vary important measure for investors. Standard Deviation is commonly associated with the estimation of an instrument's risk, but it has a major flaw in assming a normal distribution. Since few return distributions resemble a normal distribution, skewness is a better measure for predicting performance.
-    \begin{block}{Definition}
-        \begin{equation*}
-            \label{eq:skewness}
-             {\tilde {\mu }}_{3}=\mathbb{E}   \left[\left({\frac {X-\bar{x} }{\sigma }}\right)^{3}\right]  
-        \end{equation*}
-        Skewness is a measure of asymmetry that indicates if the tail of the distribution is on the left or the right.
-    \end{block}
+    \framesubtitle{An overview}
     
     
-	\begin{figure}[H]
-        \centering
-        \includegraphics[width=0.7\linewidth]{../report/media/skewness.png}
-        % \caption{Source: Wikipedia}
-        \label{}
-    \end{figure}
-     
-
-    % Most asset returns are skewed, either left or right. An investor can utilize this infomrmation to better predict future returns. A positively-skewed investment return means that there were frequent small losses and a few large gains. The opposite is true for negatively-skewed distributions.
+    \begin{alertblock}{Moments}
+        \begin{itemize}
+            \item \( {\tilde {\mu }}_{2} \) standard deviation \( \sigma \)
+            \item \( {\tilde {\mu }}_{3} \) skewness
+            \item \( {\tilde {\mu }}_{4} \) kurtosis 
+        \end{itemize}
+    \end{alertblock}
+    
 
 \end{frame}
-
-
-
-\begin{frame}
-    \frametitle{}
-	\begin{figure}[H]
-        \centering
-        \includegraphics[width=\linewidth]{../report/media/Dist_Plots.png}
-        \caption{Histogram of the returns. A bell curve approximation is fitted. Note that the x-axis is common among the histograms. This allows us to grasp the "spread" or variability of each asset. It is easy to see that bonds are less risky than commodities and especially stocks.  }
-        \label{}
-    \end{figure}
-\end{frame}
-
-
