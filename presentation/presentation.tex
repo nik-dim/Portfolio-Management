@@ -1,0 +1,37 @@
+\documentclass[compress,greek]{beamer} %
+\usepackage{pres}
+%\usetheme{CambridgeUs}
+\usetheme{Madrid}
+\usecolortheme{beaver}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usetikzlibrary{arrows,shapes}
+
+% \usepackage{subfigure}
+\usepackage{subcaption}
+
+\begin{document}
+	
+	
+	\frame{\titlepage}
+	% For every picture that defines or uses external nodes, you'll have to
+	% apply the 'remember picture' style. To avoid some typing, we'll apply
+	% the style to all pictures.
+
+	\tikzstyle{every picture}+=[remember picture]
+	
+	% By default all math in TikZ nodes are set in inline mode. Change this to
+	% displaystyle so that we don't get small fractions.
+	\everymath{\displaystyle}
+	\input{tasks/t1}
+	\input{tasks/t2}
+	\input{tasks/t3}
+	\input{tasks/t4}
+	\input{tasks/t5}
+	\input{tasks/t6}
+	\input{tasks/t7}
+	% \input{tasks/t8}
+	% \input{tasks/t9}
+	\input{tasks/refs}
+\end{document}

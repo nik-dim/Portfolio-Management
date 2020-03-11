@@ -1,0 +1,39 @@
+\section{Question 6}  
+% \textbf{Calculate the return/risk of your risky portfolio. Explain each step in your analysis. You must use EXCEL’s mmult functions for this part of the analysis.}
+\begin{frame}
+    \frametitle{Risk and return}
+    \begin{block}{Return}    
+        \begin{equation*}
+            \label{eq:return of risky portfolio}
+            R_{p}= \vec{w}^\top\cdot \mathbb{E} (\mathcal{R}) 
+        \end{equation*}
+    \end{block}
+    
+    \begin{block}{Risk}
+        
+        \begin{align*}
+            \label{eq:risk of risky portfolio}
+            \sigma_{p}&= \sqrt{\vec{w}^\top K  \vec{w} }\\
+            &=\sqrt{\begin{bmatrix}    
+                w_1 & w_2 & \dots  & w_n
+            \end{bmatrix}
+            \begin{bmatrix}
+                \sigma_{1}^2       &   \text{cov}_{1,2}       & \dots     &   \text{cov}_{1,n}       \\
+                \text{cov}_{2,1}       &   \sigma_{2}^2       & \dots     &   \text{cov}_{2,n}       \\
+                \vdots          &  \vdots   &   \ddots   &   \vdots  \\   
+                \text{cov}_{n,1}       &   \text{cov}_{n,2}       & \dots     &   \sigma_{n}^2      \\
+            \end{bmatrix}    
+            \begin{bmatrix}
+                w_1     \\
+                w_2     \\
+                \vdots  \\
+                w_n     \\
+            \end{bmatrix}  
+            } \\
+            &=\sqrt{\sum\limits_{i=1}^{n} w_i^2\sigma_i^2 +\sum\limits_{i=1}^{n} \sum\limits_{j=1}^{n} w_iw_j \text{cov}_{i,j}   }
+        \end{align*} 
+    \end{block}
+    
+    
+
+\end{frame}
