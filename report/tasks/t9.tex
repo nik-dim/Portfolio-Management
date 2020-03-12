@@ -79,6 +79,7 @@ The analysis showed that \texttt{gold} and \texttt{SIGAX} have zero weights. We 
 \end{itemize}
 
 The optimal Sharpe Ratio is also the slope of the Capital Allocation Line. The CAL of the optimal risky portfolio is tangent to the Efficient Frontier, as shown in Figure \ref{fig:final_graph}. The equation of the optimal CAL  (\( \epsilon_{opt} \)) is given below:
+
 \begin{equation}
 \label{eq:cal_opt}
 \left\{\begin{array}{c}
@@ -91,19 +92,23 @@ The optimal Sharpe Ratio is also the slope of the Capital Allocation Line. The C
 
 The final step in the portfolio construction is to decide on the allocation between risk-free assets and the risky portfolio. This decision is based on the investor's attitude towards risk. An individual's risk profile can quantified by the coefficient of risk aversion, denoted \(A\). Low values of \(A\) indicate risk-tolerance, while high values indicate risk-aversion. Various studies have been conducted to determine the range of \(A\) and is usually placed between 1 and 6. As young and risk-tolerant investors, we assume that our coefficient of risk-aversion is \(A=1.5\).
 
-Let \(z\) be the proportion of funds allocated to the optimal risky portfolio. Then \((1-z)\) is the proportion allocated to risk-free assets. Investors calculate the optimal \(z\) by maximizing their utility. Expressed as a function of z, utility is given by the equation below:
+Let \(z\) be the proportion of funds allocated to the optimal risky portfolio. Then \((1-z)\) is the proportion allocated to risk-free assets. Investors calculate the optimal \(z\) by maximizing their utility. Expressed as a function of z, utility of the optimal overall portfolio is given by the equation below:
 
-enter utility equation here
+\begin{equation}
+\label{eq:utility}
+\text{Utility} = r_{f} + z \cdot (r_{\text{opt}} - r_{f}) - 0.05 \cdot A \cdot \sigma_{\text{opt}}^{2} \cdot z^{2}
+\end{equation}
 
 Therefore the optimal \(z\) that maximizes utility is:
 
-enter z* equation here
+\begin{equation}
+\label{eq:z_optimal}
+z^{*} = \cfrac{r_{\text{opt}} - r_f}{0.1 \cdot A \cdot \sigma_{\text{opt}}^2}
+\end{equation}
 
 After calculations, we derive that \(z^{*}=0.76\) and \(U_{max}=13.87\). By finding different levels of risk an return that yield the same value of maximum utility, we can graph the indifference curve for \(U_{max}=13.87\) and \(A=1.5\). As illustrated in Figure \ref{fig:final_graph}, the optimal overall portfolio occurs at the point where the indifference curve is tangent to the CAL of the optimal risky portfolio.
 
-
-
-\begin{figure}[]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{media/Final_Graph.png}
 	\captionsetup{width=0.7\linewidth}
