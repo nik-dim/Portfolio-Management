@@ -1,59 +1,51 @@
 \section{Question 7}  
 \textbf{Derive and graph the Capital Allocation Line. Graph the Efficient Frontier with your available investment instruments (assets) and superimpose your CAL. Discuss the various options you may have and finalize your optimal point.}
 
-By taking various random weight allocations we are able to create portfolios with different risks and returns. The optimality criterion lies in the Sharpe Ratio associated with each risky portfolio. The optimal risky portfolio is characterized by the highest Sharpe ratio.
+By taking various random weight allocations we are able to create portfolios with different risks and returns. If we choose a large enough sample size \( (n=2,000,000)\), this will be a fair representation of the all the risky portfolios we can construct (portfolio universe). The results of the simulation are illustrated in Figure \ref{fig:random_portfolios}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{media/Random_Portfolios.png}
+	\captionsetup{width=0.7\linewidth}
+	\caption{\( n=2,000,000 \) random portfolios are created and plotted in a common graph. The portfolio with the highest Sharpe Ratio from the simulation is annotated.}
+	\label{fig:random_portfolios}
+\end{figure}
+
+The above graph is conducive with the theoretical one, with respect to its shape. By using a large sample size, the range of annualized returns and volatilities is known. To find the Efficient Frontier an optimization problem must be solved. The Efficient Frontier is essentially the \( Minimum-Variance\) Frontier, therefore for any given portfolio return we seek to minimize the portfolio volatility. By solving numerous such optimization problems, points on the Efficient Frontier are obtained and graphed. The results are illustrated in Figure \ref{fig:random_portfolios_and_EF}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{media/Random_Portfolios_and_EF.png}
     \captionsetup{width=0.7\linewidth}
-    \caption{\( n=50,000 \) random portfolios are created and plotted in a common graph. The optimal risky portfolio and the Efficient Frontier also appear.}
+    \caption{The Efficient Frontier.}
     \label{fig:random_portfolios_and_EF}
 \end{figure}
 
-The above graph is conducive with the theoretical one with respect to its shape. By creating the random portfolios with a large enough sample size \( (n=50,000)\), the range of annualized returns and volatilities is known. Yo find the Efficient Frontier an optimization problem must be solved. To be more specific, we seek to maximize the Sharpe Ratio given a fixed annualized portfolio return. By solving numerous such optimization problems, points on the Efficient Frontier are obtained and graphed. 
+The Capital Allocation Line (CAL) is a linear representation of all possible combinations of risk-free and risky assets. It aids investors in deciding how to split their available capital between risk-free assets and the risky portfolio. For the naive portfolio in question, the CAL equation (\( \epsilon_{naive} \)) is given below:
 
-In order to find the optimal portfolio, we ought to solve the following optimization problem:
-
-\begin{align*}
-    \text{max }\quad & \frac{\vec{w}^\top\cdot \mathbb{E} (\mathcal{R}) -r_f}{\sqrt{\vec{w}^\top K  \vec{w} }}\\
-    \text{s.t. }\quad & \mathbf{ 1 }^\top \vec{w}=1 \\
-    & \mathbf{ 1 }^\top \vec{w}_{\mathcal{ S } } = w_s \\
-    & \mathbf{ 1 }^\top \vec{w}_{\mathcal{ B } } = w_b \\
-    & \mathbf{ 1 }^\top \vec{w}_{\mathcal{ C } } = w_c \\
-    & w_s + w_b + w_c = 1 \\
-    & w_i \geq 0 \quad i=1,\dots,n
-\end{align*}
-where \( \vec{w} \) is the weight vector associated with the \( n \) assets, \( \vec{w}_{\mathcal{ S } } \), \( \vec{w}_{\mathcal{ B } } \) and \( \vec{w}_{\mathcal{ C } } \) are the weights associated with the stock, bond and commodity assets and sum up to \( w_s \), \( w_b \) and \( w_c \), respectively. Obviously, the concatenation of these vectors is the original weight vector, i.e. \( \mathcal{ S } \sqcup \mathcal{ B } \sqcup \mathcal{ C } =\{1,\cdots,n\}  \). In other words, the objective corresponds to the Sharpe Ratio and the constraints construct the feasibility region of the optimization problem given the demands dictated by the suggested allocation resulting in the weights \( w_s \), \( w_b \) and \( w_c \).
-
-The Capital Allocation Line or CAL is the line that connects the Optimal Portfolio with the risk-free portfolio. These two points suffice in deriving the equation of the CAL  \( \epsilon_{CAL} \):
 \begin{equation}
-    \label{eq:cal}
-    \left\{\begin{array}{c}
-        (0,r_f) \in \epsilon_{\text{CAL}}     \\
-        (\sigma_{\text{OPT}},r_{\text{OPT}}) \in \epsilon_{\text{CAL}}     
-    \end{array}    \right\} \implies \epsilon_{CAL}: y = \underbrace{\frac{r_{\text{OPT}}-r_f}{\sigma_{\text{OPT}}}}_{\text{max Sharpe ratio}}\cdot x + r_f
+\label{eq:cal_naive}
+\left\{\begin{array}{c}
+(0,r_f) \in \epsilon_{\text{naive}}     \\
+(\sigma_{\text{naive}},r_{\text{naive}}) \in \epsilon_{\text{naive}}     
+\end{array}    \right\} \implies \epsilon_{naive}: y = \underbrace{\frac{r_{\text{naive}}-r_f}{\sigma_{\text{naive}}}}_{\text{naive Sharpe ratio}}\cdot x + r_f
 \end{equation}
 
-Thus, we are able to plot the CAL alongside the efficient frontier and the random portfolios in figure \ref{fig:final_graph}. Solving this optimization problem yields the following results:
+As illustrated in Figure \ref{fig:Naive_CAL_and_EF}, the naive risky portfolio of uniform weights does not plot on the EF, therefore is not the optimal point. We know the following from our "Foundations of Investments" course:
 
-\begin{todo}{EF results}{todo:EF results}
-  \begin{equation}
-      \label{eq:optimal weights}
-      \vec{w} = [\cdots]
-  \end{equation}
-\end{todo}
+\begin{itemize}
+	\item The optimal risky portfolio should plot on the EF.
+	\item The optimal risky portfolio has the highest Sharpe between other risky portfolios on the EF.
+	\item The CAL of the optimal risky portfolio is tangent to the EF.
+\end{itemize}
 
+Based on the above, an optimization problem that maximizes the Sharpe Ratio must be solved, in order to find the optimal vector of weights.
 
-\begin{figure}[]
-    \centering
-    \includegraphics[width=\linewidth]{media/Final_Graph.png}
-    \captionsetup{width=0.7\linewidth}
-    \caption{The CAL passes through the risk-free and risky portfolio. The points of the line between these values are a linear combination of the two alternatives. The individual assets are presented. The naive CAL is also depicted. The benefits of the optimization are apparent.}
-    \label{fig:final_graph}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{media/Naive_CAL_and_EF.png}
+	\captionsetup{width=0.7\linewidth}
+	\caption{CAL of the naive portfolio and EF. The naive portfolio does not plot on the EF and does not have the maximum Sharpe Ratio, therefore the naive weight allocation to risky assets is not the optimal.}
+	\label{fig:Naive_CAL_and_EF}
 \end{figure}
 
-\begin{todo}{Observations}{todo:Observations}
-\paragraph*{Observations}
-talk about figure \ref{fig:final_graph}.
-\end{todo}

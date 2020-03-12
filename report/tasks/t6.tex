@@ -1,8 +1,10 @@
 \section{Question 6}  
 \textbf{Calculate the return/risk of your risky portfolio. Explain each step in your analysis. You must use EXCEL’s mmult functions for this part of the analysis.}
 
+Up until this point we have selected the assets that we will include in our risky portfolio and we have calculated important descriptive statistics and metrics for each individual security. In this section we will calculate the risk and return of the risky portfolio, using a vector of weights. Each security is assigned a weight, representing a portion of the available capital that is to be invested in it. 
+
 Let \( R_i \) be the returns data sample for the instrument \( i \) and \( \mathcal{ R } = (R_1, R_2,\cdots,R_n) \) be the collection of those random variables. 
-Let \( \vec{w} \) be the vector of weights that represents the allocation of the various instruments in our risky portfolio. Obvisouly, \( \|\vec{w}\|_1=1 \). Finally, let \( K \) be the associated covariance matrix.
+Let \( \vec{w} \) be the vector of weights that represents the allocation of the various instruments in our risky portfolio. Obviously, \( \|\vec{w}\|_1=1 \). Finally, let \( K \) be the associated covariance matrix.
 
 Then the return of the risky portfolio is a weighted average of the expected returns:
 
@@ -32,3 +34,7 @@ and the risk of the risky portfolio is measured by its standard deviation:
      } \\
     &=\sqrt{\sum\limits_{i=1}^{n} w_i^2\sigma_i^2 +\sum\limits_{i=1}^{n} \sum\limits_{j=1}^{n} w_iw_j \text{cov}_{i,j}   }
 \end{align}
+
+As an initial approach, we will assume that the available capital is uniformly allocated between all assets. The risky portfolio consists of 10 assets: 6 stocks, 2 bond mutual funds and 2 commodities. Therefore the initial vector of weights is !!!enter vector here :))) !!!!. The calculated results are presented in the table below:
+
+Enter simple table with return, vol and sharpe ration of naive portfolio.!!!
