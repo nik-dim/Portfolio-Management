@@ -1,4 +1,6 @@
-\section{Question 6}  
+% \section{Question 6}
+\section{Building the Portfolio}
+\subsection{Naive allocation}    
 % \textbf{Calculate the return/risk of your risky portfolio. Explain each step in your analysis. You must use EXCEL’s mmult functions for this part of the analysis.}
 \begin{frame}
     \frametitle{Risk and return}
@@ -33,7 +35,25 @@
             &=\sqrt{\sum\limits_{i=1}^{n} w_i^2\sigma_i^2 +\sum\limits_{i=1}^{n} \sum\limits_{j=1}^{n} w_iw_j \text{cov}_{i,j}   }
         \end{align*} 
     \end{block}
-    
-    
+\end{frame}
 
+
+\begin{frame}
+    \frametitle{Naive weight allocation}
+    % \framesubtitle{Naive weight allocation}
+    \begin{alertblock}{Remember!}
+        \begin{itemize}
+            \item 70\% Stocks
+            \item 20\% Bonds
+            \item 10\% Commodities
+        \end{itemize}
+    \end{alertblock}
+    
+    \begin{block}{What about \( \vec{w} \)?}
+        \begin{itemize}
+            \item 70\% for \( 6 \) Stocks \( \rightarrow \) \( \frac{70\%}{6}= 11.67\% \) each
+            \item 20\% for \( 2 \) Bonds \( \rightarrow \) \( 10\% \) each
+            \item 10\% for \( 2 \) Commodities \( \rightarrow \) \( 5\% \) each
+        \end{itemize}
+    \end{block}
 \end{frame}
