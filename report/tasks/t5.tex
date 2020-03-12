@@ -2,6 +2,7 @@
 \textbf{Compute additional metrics for the assets such as the correlation and covariance matrices, for the entire and two subperiods (of your own choosing), if needed. Interpret your findings. Also, compute each fund’s alpha, beta, R-square. Interpret your findings from the perspective of the investor}
 
 \subsection{Covariance and Correlation}
+\label{Correlation}
 Let \( X \) and \( Y \) be two random variables. Then the covariance is a measure of the joint variability of these two random variables:
 
 \begin{equation}
@@ -172,12 +173,12 @@ where
 Since we are working with daily data, the following methodology is used to calculate annualized return and standard deviation of a security or portfolio:
 
 \begin{itemize}
-	\item From daily prices, calculate the daily returns \( p_i = \frac{d_i-d_{i-1}}{d_{i-1}}\)
-	\item Calculate the mean \( \bar{p}_{daily} \) and standard deviation \( \sigma_{daily} \).
+	\item From daily prices, calculate the daily returns \( r_i = \frac{d_i-d_{i-1}}{d_{i-1}}\)
+	\item Calculate the mean \( \bar{r}_{daily} \) and standard deviation \( \sigma_{daily} \).
 	\item The annualized return is given from the following equation:
 	\begin{equation}
 	\label{eq:annualized_return}
-	\text{Annualized Return (\%)} =  [(1+\bar{p}_{daily})^{252}-1] * 100
+	\text{Annualized Return (\%)} =  [(1+\bar{r}_{daily})^{252}-1] * 100
 	\end{equation}
 	\item The annualized standard deviation is given from the following equation:
 	\begin{equation}

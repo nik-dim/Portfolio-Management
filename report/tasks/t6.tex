@@ -35,7 +35,7 @@ and the risk of the risky portfolio is measured by its standard deviation:
     &=\sqrt{\sum\limits_{i=1}^{n} w_i^2\sigma_i^2 +\sum\limits_{i=1}^{n} \sum\limits_{j=1}^{n} w_iw_j \text{cov}_{i,j}   }
 \end{align}
 
-As an initial approach, available capital is allocated uniformly between all assets in the class.In other words, let \( x\% \) is allocated to a class of \( n \) assets (i.e. stocks, bonds or commodities). Then, each security of this class receives a \( \frac{x\%}{n} \) allocation. Hence, the weights associated with the securities are:
+As an initial approach, available capital is allocated uniformly between assets belonging in the same class. In other words, let \( w\% \) be the percentage allocated to a class of \( n \) assets (i.e. stocks, bonds or commodities). Then, each security of this class receives a \( \frac{w\%}{n} \) allocation. As stated in the portfolio's IPS (\ref{IPS}), we have \( w_{stocks}=70\% \), \( w_{bonds}=20\% \) and \( w_{commodities}=10\% \) Hence, the weights associated with the securities are:
 
 \begin{equation}
     % ['AVGO', 'NOW', 'TSLA', 'AMZN', 'IRDM', 'BR', 'PYACX', 'SIGAX', 'gold', 'palladium', 'S&P 500']
@@ -53,20 +53,21 @@ As an initial approach, available capital is allocated uniformly between all ass
         w_{\text{palladium}}
     \end{bmatrix}=\begin{bmatrix}
         11.67\\11.67\\11.67\\11.67\\11.67\\11.67\\
-        10\\10\\5\\5
+        10.0\\10.0\\5.0\\5.0
     \end{bmatrix}\%
 \end{equation}
 
-This naive allocation yiels the following results:
-\begin{todo}{naive}{todo:naive}
-    \begin{center}
-        \begin{tabular}{l|r}
+This naive allocation yields the following results:
+\begin{center}
+	%\begin{adjustwidth}{\adjust}{}
+        \begin{tabular}{l|c}
         \toprule
-            & Results \\\hline
-        Return & \\
-        Risk & \\
-        Sharpe Ratio & \\   
+        {}   & Naive Risky Portfolio \\
+        \midrule
+        Return (\%) & 27.444 \\
+        Risk (\%) & 15.7565 \\
+        Sharpe Ratio & 1.5977\\   
         \bottomrule
         \end{tabular}
-    \end{center}
-\end{todo}
+    %\end{adjustwidth}
+\end{center}

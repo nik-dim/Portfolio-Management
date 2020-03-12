@@ -1,4 +1,5 @@
-\section{Question 7}  
+\section{Question 7} 
+\label{naive_analysis}
 \textbf{Derive and graph the Capital Allocation Line. Graph the Efficient Frontier with your available investment instruments (assets) and superimpose your CAL. Discuss the various options you may have and finalize your optimal point.}
 
 By taking various random weight allocations we are able to create portfolios with different risks and returns. If we choose a large enough sample size \( (n=2,000,000)\), this will be a fair representation of the all the risky portfolios we can construct (portfolio universe). The results of the simulation are illustrated in Figure \ref{fig:random_portfolios}.
@@ -39,7 +40,7 @@ As illustrated in Figure \ref{fig:Naive_CAL_and_EF}, the naive risky portfolio o
 	\item The CAL of the optimal risky portfolio is tangent to the EF.
 \end{itemize}
 
-Based on the above, an optimization problem that maximizes the Sharpe Ratio must be solved, in order to find the optimal vector of weights.
+Based on the above, an optimization problem that maximizes the Sharpe Ratio must be solved, in order to find the optimal vector of weights. This analysis is performed in  Section \ref{optimization}.
 
 \begin{figure}[H]
 	\centering
