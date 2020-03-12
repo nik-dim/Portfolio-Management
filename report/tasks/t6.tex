@@ -35,6 +35,38 @@ and the risk of the risky portfolio is measured by its standard deviation:
     &=\sqrt{\sum\limits_{i=1}^{n} w_i^2\sigma_i^2 +\sum\limits_{i=1}^{n} \sum\limits_{j=1}^{n} w_iw_j \text{cov}_{i,j}   }
 \end{align}
 
-As an initial approach, we will assume that the available capital is uniformly allocated between all assets. The risky portfolio consists of 10 assets: 6 stocks, 2 bond mutual funds and 2 commodities. Therefore the initial vector of weights is !!!enter vector here :))) !!!!. The calculated results are presented in the table below:
+As an initial approach, available capital is allocated uniformly between all assets in the class.In other words, let \( x\% \) is allocated to a class of \( n \) assets (i.e. stocks, bonds or commodities). Then, each security of this class receives a \( \frac{x\%}{n} \) allocation. Hence, the weights associated with the securities are:
 
-Enter simple table with return, vol and sharpe ration of naive portfolio.!!!
+\begin{equation}
+    % ['AVGO', 'NOW', 'TSLA', 'AMZN', 'IRDM', 'BR', 'PYACX', 'SIGAX', 'gold', 'palladium', 'S&P 500']
+    \label{eq:naive weight allocation}
+    \vec{w}=\begin{bmatrix}
+        w_{\text{AVGO}}\\
+        w_{\text{NOW}}\\
+        w_{\text{TSLA}}\\
+        w_{\text{AMZN}}\\
+        w_{\text{IRDM}}\\
+        w_{\text{BR}}\\
+        w_{\text{PYACX}}\\
+        w_{\text{SIGAX}}\\
+        w_{\text{gold}}\\
+        w_{\text{palladium}}
+    \end{bmatrix}=\begin{bmatrix}
+        11.67\\11.67\\11.67\\11.67\\11.67\\11.67\\
+        10\\10\\5\\5
+    \end{bmatrix}\%
+\end{equation}
+
+This naive allocation yiels the following results:
+\begin{todo}{naive}{todo:naive}
+    \begin{center}
+        \begin{tabular}{l|r}
+        \toprule
+            & Results \\\hline
+        Return & \\
+        Risk & \\
+        Sharpe Ratio & \\   
+        \bottomrule
+        \end{tabular}
+    \end{center}
+\end{todo}
