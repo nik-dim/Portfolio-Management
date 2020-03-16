@@ -12,7 +12,7 @@
 %\usefonttheme{professionalfonts}
 \usepackage{times}
 % \usepackage{tikz}
-
+\usepackage{booktabs}
 \setbeamertemplate{note page}[plain]
 % \usetikzlibrary{arrows,shapes}
 % \usetikzlibrary{matrix}
@@ -56,3 +56,12 @@
 
 
 \author{\textsf{Dimitriadis Nikolaos \and Kyratzis Apostolos}}
+
+
+\newcommand{\DoTikzmark}[1]{%
+  \tikz[remember picture] \coordinate[shift={(0,.7ex)}](#1);%
+}
+\newcommand{\colrow}[3][]{%
+  \tikz[overlay,remember picture, line width=10pt]
+    \draw[shorten >=-.1em, shorten <=-.1em, #1] (#2)--(#3);
+}
