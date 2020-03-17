@@ -13,6 +13,17 @@
 \usepackage{changepage}
 \usepackage{pdfpages}
 % \usepackage{xcolor}
+
+
+
+\newcolumntype{R}[2]{%
+    >{\adjustbox{angle=#1,lap=\width-(#2)}\bgroup}%
+    l%
+    <{\egroup}%
+}
+\newcommand*\rot{\multicolumn{1}{R{45}{1em}}}% no optional argument here, please!
+
+
 \begin{document}
 	
 	
