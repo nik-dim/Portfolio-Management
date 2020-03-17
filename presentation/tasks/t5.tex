@@ -46,9 +46,11 @@
 \begin{frame}
     \frametitle{A closer look at correlation}
 
-    \begin{alertblock}{todo}
-        add regression plots to show the difference
-    \end{alertblock}    
+	\begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{../report/media/positive_vs_negative_correlation.png}
+        \label{fig:positive_vs_negative_correlation}
+    \end{figure}
 \end{frame}
 
 % the correlation matrix is presented below:
@@ -170,5 +172,36 @@
         \item \( \sigma_p=\text{standard variation of the portfolio's excess return} \)
     \end{itemize}
     
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Financial Metrics}
+    \framesubtitle{For our assets}
+    
+    
+    \begin{center}
+        % \setlength{\tabcolsep}{2pt}
+        % \tiny
+        % \begin{adjustwidth}{}{}
+            \begin{tabular}{lccc}
+                \toprule
+                {} &    alpha &     beta &  R-squared \\
+                \midrule
+                AVGO      &  0.14213 &  1.35333 &    0.31393 \\
+                NOW       &  0.24718 &  1.46614 &    0.30955 \\
+                TSLA      &  0.17711 &  1.26445 &    0.14046 \\
+                AMZN      &  0.32815 &  1.32199 &    0.36539 \\
+                IRDM      &  0.15867 &  1.41795 &    0.20698 \\
+                BR        &  0.13206 &  0.92064 &    0.37655 \\
+                PYACX     & -0.00576 & -0.06792 &    0.04613 \\
+                SIGAX     & -0.01215 & -0.01911 &    0.00501 \\
+                gold      &  0.05087 & -0.15174 &    0.01684 \\
+                palladium &  0.17817 &  0.47398 &    0.05493 \\
+                \bottomrule
+                \end{tabular}
+                
+        % \end{adjustwidth}
+    \end{center}
 
 \end{frame}
