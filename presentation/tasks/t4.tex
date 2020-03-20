@@ -61,7 +61,9 @@
     \end{equation*}
     \begin{itemize}
         \item how "spread out" are the data around the mean
-        \item measures confidence in statistics \( \implies \) risk in finance
+        \item measures confidence in statistics \( \implies \) risk in finance 
+        \pause
+        \item BUT assumes normal distribution \pause\( \rightarrow \) Skewness, Kurtosis
     \end{itemize}
     % From the perspective of the investor, an instrument with high standard deviation carries more risk and should have higher returns to accomodate this variability of returns.
 \end{frame}
@@ -167,22 +169,46 @@
 
 \begin{frame}
     \frametitle{Measures of Variability}
-    \framesubtitle{An overview}
+    \framesubtitle{An overview from an investor's perspective}
     
-    
-    \begin{alertblock}{Moments from an investor's perspective}
-        \begin{itemize}
-            \item \( {\tilde {\mu }}_{2} \) standard deviation \( \sigma \)
-            \item \( {\tilde {\mu }}_{3} \) skewness
-            \item \( {\tilde {\mu }}_{4} \) kurtosis 
-        \end{itemize}
-    \end{alertblock}
-    
-    \begin{alertblock}{TODO}
-         add what each moments means to understanding security performance
+    \begin{alertblock}{\( {\tilde {\mu }}_{2} \) standard deviation \( \sigma \)}
+         \begin{itemize}
+             \item measure of risk
+             \item assumes normal distribution
+         \end{itemize}
     \end{alertblock}
     
 
+    \begin{alertblock}{\( {\tilde {\mu }}_{3} \) skewness}
+        \begin{itemize}
+            \item  measure of asymmetry: tail on the left/right
+            \item \( {\tilde {\mu }}_{3} > 0 \): frequent small losses, few large gains 
+            \item \( {\tilde {\mu }}_{3} > 0 \): frequent small gains, few large losses
+        \end{itemize}
+    \end{alertblock}
+
+    \begin{alertblock}{\( {\tilde {\mu }}_{4} \) kurtosis }
+        \begin{itemize}
+            \item heavy- or light-tailed (relative to a normal distribution)
+            \item high: occasional extreme returns (either positive or negative)
+        \end{itemize}
+    \end{alertblock}
+    
+    
+    % \begin{alertblock}{Moments from an investor's perspective}
+    %     \begin{itemize}
+    %         \item \( {\tilde {\mu }}_{2} \) standard deviation \( \sigma \)
+    %         \item \( {\tilde {\mu }}_{3} \) skewness
+    %         \begin{itemize}
+    %             \item  \( {\tilde {\mu }}_{3} > 0 \): frequent small losses, few large gains 
+    %             \item \( {\tilde {\mu }}_{3} > 0 \): frequent small gains, few large losses
+    %         \end{itemize}
+    %         \item \( {\tilde {\mu }}_{4} \) kurtosis 
+    %         \begin{itemize}
+    %             \item  high: occasional extreme returns (either positive or negative)
+    %         \end{itemize}
+    %     \end{itemize}
+    % \end{alertblock}
 \end{frame}
 
 
@@ -213,7 +239,7 @@
                 S\&P 500   &      0.04 &        0.05 &     0.84 &     0.71 &    -4.10 &     4.96 &      3.87 &     -0.47 \\
                 \bottomrule
                 \end{tabular}
-                \newline
+                % \newline
                 % \(^*: \%\) 
         % \end{adjustwidth}
     \end{center}
