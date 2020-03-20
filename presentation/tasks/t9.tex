@@ -62,7 +62,7 @@
 % By solving the above optimization problem the optimal weights of securities in the risky portfolio are calculated:
 \begin{frame}
     \frametitle{Optimization yields...}
-    \framesubtitle{optimal weights}
+    \framesubtitle{Optimal weights}
     \begin{equation*}
         % ['AVGO', 'NOW', 'TSLA', 'AMZN', 'IRDM', 'BR', 'PYACX', 'SIGAX', 'gold', 'palladium', 'S&P 500']
         \label{eq:naive weight allocation}
@@ -86,6 +86,10 @@
                 {\( 0.0 \)};}\\10.0
         \end{bmatrix}\%
     \end{equation*}
+    
+    \begin{itemize}
+    	\item Assets with zero weight allocation can either be excluded or substituted by other assets of the same class
+    \end{itemize}
     % \colrow[blue ,opacity=.5]{num0}{num1}
     % \colrow[blue ,opacity=.5]{num2}{num3}
 \end{frame}
@@ -93,19 +97,20 @@
 \begin{frame}
     \frametitle{Optimization yields...}
     \framesubtitle{Financial Metrics}
-    \begin{center}
-        \begin{tabular}{l|c}
-            \toprule
-            {}   & Optimal Risky Portfolio \\
-            \midrule
-            Return (\%) & 32.7164 \\
-            Risk (\%) & 16.3185 \\
-            Sharpe Ratio & 1.8658\\   
-            Beta (\( \beta \)) & 0.9067\\
-            \bottomrule
-        \end{tabular}
-    \end{center}
-
+	\begin{center}
+	%\begin{adjustwidth}{\adjust}{}
+	\begin{tabular}{l|cc}
+		\toprule
+		{}   & Optimal Risky Portfolio & Naive Risky Portfolio \\
+		\midrule
+		Return (\%) & 32.7164 & 27.444\\
+		Risk (\%) & 16.3185 & 15.7565\\
+		Sharpe Ratio & 1.8658 & 1.5977\\   
+		Beta (\( \beta \)) & 0.9067 & 0.9109\\
+		\bottomrule
+	\end{tabular}
+	%\end{adjustwidth}
+	\end{center}
 \end{frame}
 % This optimal allocation yields the following results:
 % \begin{center}
@@ -133,8 +138,8 @@
         \label{eq:cal}
         \left\{\begin{array}{c}
             (0,r_f) \in \epsilon_{\text{CAL}}     \\
-            (\sigma_{\text{OPT}},r_{\text{OPT}}) \in \epsilon_{\text{CAL}}     
-        \end{array}    \right\} \pause\implies \epsilon_{CAL}: y = \underbrace{\frac{r_{\text{OPT}}-r_f}{\sigma_{\text{OPT}}}}_{\text{max Sharpe ratio}}\cdot x + r_f
+            (\sigma_{\text{opt}},r_{\text{opt}}) \in \epsilon_{\text{CAL}}     
+        \end{array}    \right\} \pause\implies \epsilon_{CAL}: y = \underbrace{\frac{r_{\text{opt}}-r_f}{\sigma_{\text{opt}}}}_{\text{max Sharpe ratio}}\cdot x + r_f
     \end{equation*}
 
 \end{frame}
@@ -212,6 +217,22 @@
         \end{tabular}
     \end{center}
 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Holding Period Returns}
+	\framesubtitle{(1/14/2020 - Now)}
+	\begin{center}
+	%\begin{adjustwidth}{\adjust}{}
+	\begin{tabular}{l|cc}
+		\toprule
+		{}   & Optimal Overall Portfolio & S\&P 500 \\
+		\midrule
+		HPR (\%) & -6.9747 & -17.4263\\
+		\bottomrule
+	\end{tabular}
+	%\end{adjustwidth}
+	\end{center}	
 \end{frame}
 
 % \vspace{\baselineskip}
