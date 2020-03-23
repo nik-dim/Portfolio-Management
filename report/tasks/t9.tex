@@ -85,12 +85,12 @@ The optimal Sharpe Ratio is also the slope of the Capital Allocation Line. The C
 \left\{\begin{array}{c}
 (0,r_f) \in \epsilon_{\text{opt}}     \\
 (\sigma_{\text{opt}},r_{\text{opt}}) \in \epsilon_{\text{opt}}     
-\end{array}    \right\} \implies \epsilon_{opt}: y = \underbrace{\frac{r_{\text{opt}}-r_f}{\sigma_{\text{opt}}}}_{\text{max Sharpe ratio}}\cdot x + r_f
+\end{array}    \right\} \implies \epsilon_{opt}: y = \underbrace{\frac{r_{\text{opt}}-r_f}{\sigma_{\text{opt}}}}_{\text{max Sharpe Ratio}}\cdot x + r_f
 \end{equation}
 
 \subsection{Optimal Overall Portfolio}
 
-The final step in the portfolio construction is to decide on the allocation between risk-free assets and the risky portfolio. This decision is based on the investor's attitude towards risk. An individual's risk profile can be quantified by the coefficient of risk aversion, denoted \(A\). Low values of \(A\) indicate risk-tolerance, while high values indicate risk-aversion. Various studies have been conducted to determine the range of \(A\) and is usually placed between 1 and 6. As young and risk-tolerant investors, we assume that our coefficient of risk-aversion is \(A=1.5\).
+The final step in the portfolio construction is to decide on the allocation between risk-free assets and the risky portfolio. This decision is based on the investor's attitude towards risk. An individual's risk profile can be quantified by the coefficient of risk aversion, denoted \(A\). Low values of \(A\) indicate risk-tolerance, while high values indicate risk-aversion. Various studies have been conducted to determine the range of \(A\) and is usually placed between 1 and 6. As young and risk-tolerant investors, we assume that our coefficient of risk-aversion is \(A=1.2\).
 
 Let \(z\) be the proportion of funds allocated to the optimal risky portfolio. Then \((1-z)\) is the proportion allocated to risk-free assets. Investors calculate the optimal \(z\) by maximizing their utility. Expressed as a function of z, utility of the optimal overall portfolio is given by the equation below:
 
@@ -108,7 +108,7 @@ Therefore, to maximize the utility w.r.t the allocation \( z \), we set the firs
 	\implies z^{*} = \cfrac{r_{\text{opt}} - r_f}{0.1 \cdot A \cdot \sigma_{\text{opt}}^2} \numberthis
 \end{gather*}
 
-After calculations, we derive that \(z^{*}=0.95\) and \(U_{max}=13.87\). By finding different levels of risk an return that yield the same value of maximum utility, we can graph the indifference curve for \(U_{max}=13.87\) and \(A=1.5\). As illustrated in Figure \ref{fig:final_graph}, the optimal overall portfolio occurs at the point where the indifference curve is tangent to the CAL of the optimal risky portfolio.
+After calculations, we derive that \(z^{*}=0.95\) and \(U_{max}=16.73\). By finding different levels of risk an return that yield the same value of maximum utility, we can graph the indifference curve for \(U_{max}=16.73\) and \(A=1.2\). As illustrated in Figure \ref{fig:final_graph}, the optimal overall portfolio occurs at the point where the indifference curve is tangent to the CAL of the optimal risky portfolio.
 
 \begin{figure}[H]
 	\centering
@@ -129,11 +129,11 @@ After calculating \(z^{*}\), we can measure the overall portfolio's performance 
 		\toprule
 		{}   & Optimal Overall Portfolio & S\&P 500 \\
 		\midrule
-		Return (\%) & 25.4769 & 11.3118\\
-		Risk (\%) & 12.4384 & 13.4138\\
+		Return (\%) & 31.1941 & 11.3118\\
+		Risk (\%) & 15.5026 & 13.4138\\
 		Sharpe Ratio & 1.8658 & 0.6741\\   
-		Beta (\( \beta \)) & 0.6911 & 1.0 \\
-		Alpha (\( \alpha \)) (\%) & 16.9584 & 0.0\\
+		Beta (\( \beta \)) & 0.8613 & 1.0 \\
+		Alpha (\( \alpha \)) (\%) & 21.1362 & 0.0\\
 		\bottomrule
 	\end{tabular}
 	%\end{adjustwidth}
