@@ -1,3 +1,10 @@
+*.ini
+code/.ipynb_checkpoints/*.*
+
+
+
+
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
@@ -271,3 +278,7 @@ TSWLatexianTemp*
 
 # Makeindex log files
 *.lpz
+code/.ipynb_checkpoints/portfolio-management-checkpoint.ipynb
+code/.ipynb_checkpoints/portfolio-management-checkpoint.ipynb
+code/.ipynb_checkpoints/portfolio-management-checkpoint.ipynb
+code/.ipynb_checkpoints/portfolio-management-checkpoint.ipynb
