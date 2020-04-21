@@ -4,4 +4,4 @@ An application of Modern Portfolio Theory (MPT) is presented with the extra twis
 
 Navigate to `code/portfolio-management.ipynb` for a detailed description.
 
-![](report/media/final_graph.png)
+![](.final_graph.png)
